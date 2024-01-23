@@ -30,32 +30,19 @@
             flex: 1;
             padding: 15px;
         }
-<<<<<<< HEAD
-
-        .bottombar {
-            width: 100%;
-            bottom:0px;
-            position: fixed;
-        }
-=======
         .bottombar {
 			width: 100%;
 			bottom: 0px;
 			position:fixed;
         }
         
->>>>>>> b3415b742bdb37bb4659bce91310a07a02a85320
     </style>
 </head>
 
 <body>
 
 <div class="container-fluid">
-<<<<<<< HEAD
-    <!-- Sidebar -->
-=======
     <!-- Nabar -->
->>>>>>> b3415b742bdb37bb4659bce91310a07a02a85320
     <div class="topbar">
         <!-- 상단 메뉴 -->
         <tiles:insertAttribute name="header"/>

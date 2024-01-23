@@ -10,10 +10,6 @@
     template="/WEB-INF/views/template/template.jsp">
     <put-attribute name="header"
       value="/WEB-INF/views/template/top.jsp" />
-<<<<<<< HEAD
-
-=======
->>>>>>> b3415b742bdb37bb4659bce91310a07a02a85320
     <put-attribute name="bottom"
       value="/WEB-INF/views/template/bottom.jsp" />
   </definition>
