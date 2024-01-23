@@ -31,6 +31,12 @@
             flex: 1;
             padding: 15px;
         }
+
+        .bottombar {
+            width: 100%;
+            bottom:0px;
+            position: fixed;
+        }
     </style>
 </head>
 
@@ -52,7 +58,7 @@
         <!-- 내용 끝 -->
     </div>
 
-    <div>
+    <div class="bottombar">
         <tiles:insertAttribute name="bottom"/>
     </div>
 </div>
