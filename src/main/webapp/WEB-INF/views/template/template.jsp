@@ -7,7 +7,6 @@
     <title><tiles:getAsString name="title"/></title>
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
-    <!-- Custom CSS styles for the sidebar -->
     <style>
         body {
             display: flex;
@@ -31,20 +30,32 @@
             flex: 1;
             padding: 15px;
         }
+<<<<<<< HEAD
 
         .bottombar {
             width: 100%;
             bottom:0px;
             position: fixed;
         }
+=======
+        .bottombar {
+			width: 100%;
+			bottom: 0px;
+			position:fixed;
+        }
+        
+>>>>>>> b3415b742bdb37bb4659bce91310a07a02a85320
     </style>
 </head>
 
 <body>
 
-<!-- Container for sidebar and main content -->
 <div class="container-fluid">
+<<<<<<< HEAD
     <!-- Sidebar -->
+=======
+    <!-- Nabar -->
+>>>>>>> b3415b742bdb37bb4659bce91310a07a02a85320
     <div class="topbar">
         <!-- 상단 메뉴 -->
         <tiles:insertAttribute name="header"/>
@@ -54,7 +65,13 @@
     <!-- Main Content -->
     <div class="main-content">
         <!-- 내용 시작 -->
-        <tiles:insertAttribute name="body"/>
+        <tiles:insertAttribute name="body"/>       													
+        <!-- 내용 끝 -->
+    </div>
+    
+	<div class="bottombar">
+        <!-- 내용 시작 -->
+        <tiles:insertAttribute name="bottom"/>       													
         <!-- 내용 끝 -->
     </div>
 
