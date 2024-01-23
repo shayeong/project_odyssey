@@ -21,16 +21,14 @@
             flex: 1;
         }
 
-        .sidebar {
-            width: 280px;
+        .topbar {
+            width: 100%;
             position: fixed;
-            height: 100%;
             background-color: #f8f9fa; /* Set your desired sidebar background color */
         }
 
         .main-content {
             flex: 1;
-            margin-left: 280px; /* Set the same width as the sidebar */
             padding: 15px;
         }
     </style>
@@ -41,7 +39,7 @@
 <!-- Container for sidebar and main content -->
 <div class="container-fluid">
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="topbar">
         <!-- 상단 메뉴 -->
         <tiles:insertAttribute name="header"/>
         <!-- 상단 메뉴 끝 -->
