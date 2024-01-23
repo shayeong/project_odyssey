@@ -7,7 +7,6 @@
     <title><tiles:getAsString name="title"/></title>
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
-    <!-- Custom CSS styles for the sidebar -->
     <style>
         body {
             display: flex;
@@ -31,14 +30,15 @@
             flex: 1;
             padding: 15px;
         }
+        
     </style>
 </head>
 
 <body>
 
-<!-- Container for sidebar and main content -->
 <div class="container-fluid">
-    <!-- Sidebar -->
+
+    <!-- Nabar -->
     <div class="topbar">
         <!-- 상단 메뉴 -->
         <tiles:insertAttribute name="header"/>
@@ -48,9 +48,10 @@
     <!-- Main Content -->
     <div class="main-content">
         <!-- 내용 시작 -->
-        <tiles:insertAttribute name="body"/>
+        <tiles:insertAttribute name="body"/>       													
         <!-- 내용 끝 -->
     </div>
+	
 </div>
 
 <!-- Bootstrap JS and Popper.js scripts -->
