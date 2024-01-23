@@ -51,6 +51,10 @@
         <tiles:insertAttribute name="body"/>
         <!-- 내용 끝 -->
     </div>
+
+    <div>
+        <tiles:insertAttribute name="bottom"/>
+    </div>
 </div>
 
 <!-- Bootstrap JS and Popper.js scripts -->
