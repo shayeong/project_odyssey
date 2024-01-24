@@ -18,6 +18,7 @@
         .container-fluid {
             display: flex;
             flex: 1;
+            position: relative;
         }
 
         .topbar {
@@ -33,7 +34,7 @@
         .bottombar {
 			width: 100%;
 			bottom: 0px;
-			position:fixed;
+			position:absolute;
         }
         
     </style>
