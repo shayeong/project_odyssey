@@ -34,11 +34,14 @@
             padding: 15px;
             margin-bottom: 50px;
         }
+<<<<<<< HEAD
+=======
         .bottombar {
 			width: 100%;
 			bottom: 0px;
 			position:absolute;
         }
+>>>>>>> shin
         
     </style>
 </head>
@@ -46,6 +49,7 @@
 <body>
 
 <div class="container-fluid">
+
     <!-- Nabar -->
     <div class="topbar">
         <!-- 상단 메뉴 -->
