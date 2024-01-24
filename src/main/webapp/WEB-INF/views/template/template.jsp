@@ -19,13 +19,14 @@
             display: flex;
             flex: 1;
             position: relative;
+            position: relative;
         }
 
         .topbar {
             width: 100%;
             position: fixed;
             background-color: #f8f9fa;
-            
+            margin-bottom: 300px;
         }
 
         .main-content {
@@ -37,7 +38,7 @@
 =======
         .bottombar {
 			width: 100%;
-			bottom: 0;
+			bottom: 0px;
 			position:absolute;
         }
 >>>>>>> shin
@@ -67,10 +68,6 @@
         <!-- 내용 시작 -->
         <tiles:insertAttribute name="bottom"/>       													
         <!-- 내용 끝 -->
-    </div>
-
-    <div class="bottombar">
-        <tiles:insertAttribute name="bottom"/>
     </div>
 </div>
 
