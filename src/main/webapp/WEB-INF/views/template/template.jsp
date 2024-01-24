@@ -64,6 +64,10 @@
         <tiles:insertAttribute name="bottom"/>       													
         <!-- 내용 끝 -->
     </div>
+
+    <div class="bottombar">
+        <tiles:insertAttribute name="bottom"/>
+    </div>
 </div>
 
 <!-- Bootstrap JS and Popper.js scripts -->
