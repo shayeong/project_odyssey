@@ -18,18 +18,29 @@
         .container-fluid {
             display: flex;
             flex: 1;
+            position: relative;
         }
 
         .topbar {
             width: 100%;
             position: fixed;
-            background-color: #f8f9fa; /* Set your desired sidebar background color */
+            background-color: #f8f9fa;
+            
         }
 
         .main-content {
             flex: 1;
             padding: 15px;
+            margin-bottom: 50px;
         }
+<<<<<<< HEAD
+=======
+        .bottombar {
+			width: 100%;
+			bottom: 0;
+			position:absolute;
+        }
+>>>>>>> shin
         
     </style>
 </head>
@@ -51,7 +62,16 @@
         <tiles:insertAttribute name="body"/>       													
         <!-- 내용 끝 -->
     </div>
-	
+    
+	<div class="bottombar">
+        <!-- 내용 시작 -->
+        <tiles:insertAttribute name="bottom"/>       													
+        <!-- 내용 끝 -->
+    </div>
+
+    <div class="bottombar">
+        <tiles:insertAttribute name="bottom"/>
+    </div>
 </div>
 
 <!-- Bootstrap JS and Popper.js scripts -->
