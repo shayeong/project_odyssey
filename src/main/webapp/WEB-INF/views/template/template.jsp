@@ -26,7 +26,7 @@
             width: 100%;
             position: fixed;
             background-color: #f8f9fa;
-            
+            margin-bottom: 300px;
         }
 
         .main-content {
