@@ -89,26 +89,16 @@
 			<div class="carousel-inner">
 
 
-				<!-- / 슬라이드 쇼 끝 -->
+                <ul class="list-unstyled ps-0 mt-auto">
 
-				<!-- 왼쪽 오른쪽 화살표 버튼 -->
-				<a class="carousel-control-prev" href="#demo" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<!-- <span>Previous</span> -->
-				</a> <a class="carousel-control-next" href="#demo" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<!-- <span>Next</span> -->
-				</a>
-				<!-- / 화살표 버튼 끝 -->
+                    <li class="mb-1">
+                        <a href="${root}/board/board" class="btn btn-primary w-100"><i
+                                class="fa-solid fa-user-plus"></i> Sign Up</a>
+                    </li>
 
-				<!-- 인디케이터 -->
-				<ul class="carousel-indicators">
-					<li data-target="#demo" data-slide-to="0" class="active"></li>
-					<!--0번부터시작-->
-					<li data-target="#demo" data-slide-to="1"></li>
-					<li data-target="#demo" data-slide-to="2"></li>
-				</ul>
-				<!-- 인디케이터 끝 -->
+                </ul>
+
+
 			</div>
 		</div>
 	</div>

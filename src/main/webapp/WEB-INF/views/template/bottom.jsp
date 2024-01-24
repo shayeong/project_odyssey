@@ -45,13 +45,13 @@
 		<div id="serviceNameArea">
 			<a href="/" class="text-decoration-none">
 				<span style="color:#00A5FF;">HAPPY</span>
-				<span style="color:#52E252;">EVER</span>
+				<span style="color:#52E252;">오디세이</span>
 			</a>
 		</div>
 		<div id="addr" style="font-family: 'EliceDigitalBaeum_Regular';">
 			<address>
-				copyright &copy; 우리는 해피하조<br>
-				정유섭, 류승재, 김태경, 문기연, 문승우, 박종휘, 조현하
+				copyright &copy; 오디세이<br>
+				신하영, 박상현, 원도연
 				
 			</address>
 		</div>

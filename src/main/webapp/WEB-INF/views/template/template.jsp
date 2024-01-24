@@ -18,22 +18,25 @@
         .container-fluid {
             display: flex;
             flex: 1;
+            position: relative;
         }
 
         .topbar {
             width: 100%;
             position: fixed;
-            background-color: #f8f9fa; /* Set your desired sidebar background color */
+            background-color: #f8f9fa;
+            
         }
 
         .main-content {
             flex: 1;
             padding: 15px;
+            margin-bottom: 50px;
         }
         .bottombar {
 			width: 100%;
-			bottom: 0px;
-			position:fixed;
+			bottom: 0;
+			position:absolute;
         }
         
     </style>
