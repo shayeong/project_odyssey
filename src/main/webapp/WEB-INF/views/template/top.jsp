@@ -147,7 +147,7 @@
 	  	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 	    	<ul class="navbar-nav">
 	      		<li class="nav-item active">
-	        		<a class="nav-link" href="${pageContext.request.contextPath }/board/board.jsp">여행리뷰 <span class="sr-only">(current)</span></a>
+	        		<a class="nav-link" href="${pageContext.request.contextPath }/board/board">여행리뷰 <span class="sr-only">(current)</span></a>
 	      		</li>
 	      		<li class="nav-item">
                  <a class="nav-link" href="${pageContext.request.contextPath }/howTo.pdf">이용방법</a>

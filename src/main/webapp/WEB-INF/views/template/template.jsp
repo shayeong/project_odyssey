@@ -19,6 +19,7 @@
             display: flex;
             flex: 1;
             position: relative;
+            position: relative;
         }
 
         .topbar {
@@ -35,7 +36,7 @@
         }
         .bottombar {
 			width: 100%;
-			bottom: 0;
+			bottom: 0px;
 			position:absolute;
         }
         
