@@ -152,12 +152,15 @@
 	      		<li class="nav-item">
                  <a class="nav-link" href="${pageContext.request.contextPath }/howTo.pdf">이용방법</a>
                	</li>
+               	<li class="nav-item">
+                 <a class="nav-link" href="${root}/board/board">여행플랜</a>
+               	</li>
 	      		<c:choose>
 	      			<c:when test="${user != null}">
 						<li class="nav-item">
 			        		<button onclick="myFunction()" class="nav-link dropdown-toggle" href="#">${user.name }님 </button>
 			        		<div id="myDropdown" class="dropdown-content">
-							    <a href="${pageContext.request.contextPath }/mypage/mypage_view.jsp">마이페이지</a>
+							    <a href="${pageContext.request.contextPath }/member/mypage_view.jsp">마이페이지</a>
 							    <a href="${pageContext.request.contextPath }/login/userlogout.lo">로그아웃</a>
 							 </div>
 			      		</li>
@@ -223,7 +226,7 @@
 													</span> 
 													<span class="bottom_side">&#124</span>
 													<span class="signUp-btn">
-														<a href="${pageContext.request.contextPath }/join/join.jsp">회원가입</a>
+														<a href="${pageContext.request.contextPath }/member/crateForm.jsp">회원가입</a>
 													</span>
 												</p>
 										
