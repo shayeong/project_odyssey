@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -222,11 +222,11 @@
 												<!-- 비밀번호 찾기, 회원가입 -->
 												<p class="signForm_bottom">
 													<span class="find-pw">
-														<a href="${pageContext.request.contextPath }/login/find_pw.jsp">비밀번호 찾기</a>
+														<a href="${root}/login/findPw">비밀번호 찾기</a>
 													</span> 
 													<span class="bottom_side">&#124</span>
 													<span class="signUp-btn">
-														<a href="${pageContext.request.contextPath }/member/crateForm.jsp">회원가입</a>
+														<a href="${root}/member/createForm">회원가입</a>
 													</span>
 												</p>
 										
