@@ -7,58 +7,62 @@
     <title><tiles:getAsString name="title"/></title>
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
-    <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            margin: 0;
-            flex-direction: column;
-        }
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        margin: 0;
+        flex-direction: column; /* 세로로 쌓기 위해 column으로 변경 */
+    }
 
-        .container-fluid {
-            display: flex;
-            flex: 1;
-            position: relative;
-            position: relative;
-        }
+    .container-fluid {
+        display: flex;
+        flex: 1;
+        flex-direction: column; /* 세로로 쌓기 위해 column으로 변경 */
+        position: relative;
+    }
 
-        .topbar {
-            width: 100%;
-            position: fixed;
-            background-color: #f8f9fa;
-            margin-bottom: 300px;
-        }
+    .navbar,
+    .main-content,
+    .bottombar {
+        width: 100%;
+    }
 
-        .main-content {
-            flex: 1;
-            padding: 15px;
-            margin-bottom: 50px;
-        }
-        .bottombar {
-			width: 100%;
-			bottom: 0px;
-			position:absolute;
-        }
-        
-    </style>
+    .navbar {
+        position: fixed;
+        top: 0; /* 상단에 고정되도록 설정 */
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 15px;
+        margin-bottom: 50px;
+    }
+
+    .bottombar {
+        position: absolute;
+        bottom: 0; /* 하단에 고정되도록 설정 */
+    }
+</style>
 </head>
 
 <body>
 
 <div class="container-fluid">
+
     <!-- Nabar -->
-    <div class="topbar">
+    <div class="navbar">
         <!-- 상단 메뉴 -->
         <tiles:insertAttribute name="header"/>
         <!-- 상단 메뉴 끝 -->
     </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- 내용 시작 -->
+    
+	 <!-- Main Content -->
+   	 <div class="main-content">
+     	<!-- 내용 시작 -->
         <tiles:insertAttribute name="body"/>       													
         <!-- 내용 끝 -->
-    </div>
+    </div>    
     
 	<div class="bottombar">
         <!-- 내용 시작 -->

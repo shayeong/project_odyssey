@@ -87,16 +87,7 @@
 	<div class="container">
 		<div id="demo" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
-
-
-                <ul class="list-unstyled ps-0 mt-auto">
-
-                    <li class="mb-1">
-                        <a href="${root}/board/board" class="btn btn-primary w-100"><i
-                                class="fa-solid fa-user-plus"></i> Sign Up</a>
-                    </li>
-
-                </ul>
+	
 
 
 			</div>

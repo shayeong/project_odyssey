@@ -11,4 +11,9 @@
 			value="/WEB-INF/views/member/mypage.jsp" />
 	</definition>
 
+	<definition name="/member/createForm" extends="main">
+		<put-attribute name="title" value="회원가입 페이지"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/member/createForm.jsp" />
+	</definition>
 </tiles-definitions>       
