@@ -5,10 +5,9 @@
 
 <tiles-definitions>
 
-	<definition name="/logoin/find_pw" extends="main">
+	<definition name="/login/findPw" extends="main">
 		<put-attribute name="title" value="비밀번호 찾기"></put-attribute>
 		<put-attribute name="body"
-			value="/WEB-INF/views/logoin/find_pw.jsp" />
+			value="/WEB-INF/views/login/find_pw.jsp" />
 	</definition>
-
 </tiles-definitions>       
