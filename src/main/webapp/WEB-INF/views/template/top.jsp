@@ -160,7 +160,7 @@
 						<li class="nav-item">
 			        		<button onclick="myFunction()" class="nav-link dropdown-toggle" href="#">${user.name }님 </button>
 			        		<div id="myDropdown" class="dropdown-content">
-							    <a href="${pageContext.request.contextPath }/member/mypage_view.jsp">마이페이지</a>
+							    <a href="${root}/member/mypage">마이페이지</a>
 							    <a href="${pageContext.request.contextPath }/login/userlogout.lo">로그아웃</a>
 							 </div>
 			      		</li>
