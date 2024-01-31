@@ -181,7 +181,7 @@ h3 {
 	width: 100%;
 	text-align: center;
 	margin: 0 auto;
-	margin-bottom: 150px;
+	margin-bottom: 100px;
 }
 
 .pagination {

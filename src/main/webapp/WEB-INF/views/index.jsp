@@ -83,34 +83,7 @@
 		//기본 5초
 		})
 	</script>
-	<div class="all">
-	<div class="container">
-		<div id="demo" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-	
-
-
-			</div>
-		</div>
-	</div>
-	<!-- carousel 끝 -->
-	
-	
-
-	<!-- 이미지 시작 -->
-	<div class="mx-auto banner mt-5 mb-5 text-center">
-		<a href="https://tour.jeonju.go.kr/index.jeonju#content" class="text-decoration-none">   
-			<img src="${pageContext.request.contextPath }/images/side_banner1.PNG" width="150" height="150"  alt="전주여행" class="img-responsive center-block">
-		</a> 
-		<a href="https://www.visitjeju.net/kr/" class="text-decoration-none">         
-			<img src="${pageContext.request.contextPath }/images/side_banner2.PNG" width="150" height="150"  alt="제주도여행" class="img-responsive center-block">
-		</a> 
-		<a href="https://www.airbnb.co.kr/" class="text-decoration-none">         
-			<img src="${pageContext.request.contextPath }/images/side_banner3.PNG" width="150" height="150"  alt="에어비앤비" class="img-responsive center-block">
-		</a>
-	</div>
-
-	<!-- 이미지 끝 -->
+	<div id="demo" class="carousel slide" data-ride="carousel">
 
 	<!-- 검색바 시작 -->
 	<form action="https://www.google.com/search" method="GET">
