@@ -29,8 +29,8 @@
     }
 
     .navbar {
-        position: fixed;
         top: 0; /* 상단에 고정되도록 설정 */
+        position: fixed;
     }
 
     .main-content {
