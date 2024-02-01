@@ -4,7 +4,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.member.MemberMapper">
+<mapper namespace="com.member.model.MemberMapper">
 	
 	<update id="updateFile" parameterType="Map">
 		update member 
@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id = #{id}
 	</update>
 
-    <update id="update" parameterType="com.model.member.MemberDTO">
+    <update id="update" parameterType="com.member.model.MemberDTO">
 		update member
 		set tel = #{tel},
 			email = #{email},
@@ -22,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id = #{id}
 	</update>
 
-	<select id="read" parameterType="String" resultType="com.model.member.MemberDTO">
+	<select id="read" parameterType="String" resultType="com.member.model.MemberDTO">
 		select * 
 		from member
 		where id = #{id}
@@ -46,7 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="list" parameterType="Map"
-		resultType="com.model.member.MemberDTO">
+		resultType="com.member.model.MemberDTO">
 		SELECT id, mname, tel, email, zipcode, address1,
 		address2, fname
 		FROM member
@@ -93,7 +93,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM member
 		WHERE email= #{email}
 	</select>
-	<insert id="create" parameterType="com.model.member.MemberDTO">
+	<insert id="create" parameterType="com.member.model.MemberDTO">
 		INSERT INTO member(id, passwd,
 		mname, tel, email, zipcode,
 		address1,address2, mdate, fname,
@@ -102,7 +102,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{address1},#{address2}, sysdate(), #{fname}, 'H')
 	</insert>
 
-	<resultMap type="com.model.member.MemberDTO" id="memberOrder">
+	<resultMap type="com.member.model.MemberDTO" id="memberOrder">
 		<result property="id" column="id" />
 		<result property="mname" column="mname" />
 		<result property="fname" column="fname" />

@@ -3,7 +3,7 @@ package com.member.model;
 import java.util.List;
 import java.util.Map;
 
-public interface MemberMapper {
+public interface MemberService {
 	int duplicatedId(String id);
 	int duplicatedEmail(String email);
 	int create(MemberDTO dto);
@@ -14,5 +14,5 @@ public interface MemberMapper {
 	MemberDTO read(String id);
 	int update(MemberDTO dto);
 	MemberDTO mypage(String id);
-	int updateFile(Map map);
+    int updateFile(Map map);
 }
