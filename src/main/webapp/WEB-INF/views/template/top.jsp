@@ -226,7 +226,7 @@
 													</span> 
 													<span class="bottom_side">&#124</span>
 													<span class="signUp-btn">
-														<a href="${root}/member/createForm">회원가입</a>
+														<a href="${root}/member/agree">회원가입</a>
 													</span>
 												</p>
 										

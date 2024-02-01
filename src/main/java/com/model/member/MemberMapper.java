@@ -1,9 +1,12 @@
-package com.member.model;
+package com.model.member;
 
 import java.util.List;
 import java.util.Map;
 
-public interface MemberService {
+import org.springframework.stereotype.Component;
+
+@Component
+public interface MemberMapper {
 	int duplicatedId(String id);
 	int duplicatedEmail(String email);
 	int create(MemberDTO dto);
@@ -13,6 +16,8 @@ public interface MemberService {
 	List<MemberDTO> list(Map map);
 	MemberDTO read(String id);
 	int update(MemberDTO dto);
+	int updateFile(Map map);
+	String getId(Map<String, String> info);
+    String getPasswd(Map<String, String> info);
 	MemberDTO mypage(String id);
-    int updateFile(Map map);
 }

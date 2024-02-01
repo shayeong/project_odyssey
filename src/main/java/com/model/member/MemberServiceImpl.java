@@ -1,4 +1,4 @@
-package com.member.model;
+package com.model.member;
 
 import java.util.List;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("com.member.model.MemberServiceImpl")
+@Service("com.model.member.MemberServiceImpl")
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
@@ -67,15 +67,24 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDTO mypage(String id) {
-		// TODO Auto-generated method stub
-		return mapper.mypage(id);
-	}
-
-	@Override
 	public int updateFile(Map map) {
 		// TODO Auto-generated method stub
 		return mapper.updateFile(map);
 	}
 
+	@Override
+    public String getId(Map<String, String> info) {
+        return mapper.getId(info);
+    }
+
+    @Override
+    public String getPasswd(Map<String, String> info) {
+        return mapper.getPasswd(info);
+    }
+
+	@Override
+	  public MemberDTO mypage(String id) {
+	    // TODO Auto-generated method stub
+	    return mapper.mypage(id);
+	}
 }

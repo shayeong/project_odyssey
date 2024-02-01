@@ -1,5 +1,6 @@
-package com.member.model;
+package com.model.member;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.*;
@@ -10,6 +11,7 @@ import lombok.*;
 @Setter
 @ToString
 @Builder
+@Component
 public class MemberDTO {
     private String id       ; 
     private String passwd   ;
