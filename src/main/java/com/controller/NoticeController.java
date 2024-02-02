@@ -1,8 +1,14 @@
 package com.controller;
 
+<<<<<<< HEAD
 import com.model.member.MemberDTO;
 import com.model.notice.NoticeDTO;
 import com.model.notice.NoticeService;
+=======
+import com.model.notice.NoticeDTO;
+import com.model.notice.NoticeService;
+import com.model.member.MemberDTO;
+>>>>>>> shin
 import com.utility.Utility;
 import java.util.HashMap;
 import java.util.List;

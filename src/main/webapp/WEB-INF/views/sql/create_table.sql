@@ -71,7 +71,10 @@ CREATE TABLE notice(
   title             VARCHAR(300)         NOT NULL COMMENT '제목',
   content       TEXT                       NOT NULL COMMENT '내용',
   id        VARCHAR (20)           NOT NULL COMMENT 'id',
+<<<<<<< HEAD
   passwd               varchar(20)  NOT NULL ,
+=======
+>>>>>>> shin
   cnt             SMALLINT                 NOT NULL DEFAULT '0' COMMENT '조회수',
   rdate          DATETIME                  NOT NULL COMMENT '등록일',
   PRIMARY KEY (noticeno)  

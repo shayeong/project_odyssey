@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
+=======
+<%@ page contentType="text/html; charset=UTF-8" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+>>>>>>> shin
 <html>
 <head>
     <script>
@@ -57,8 +63,13 @@
             </div>
         </div>
         <div class="card-footer d-flex flex-row-reverse ">
+<<<<<<< HEAD
         	<button class="btn btn-outline-dark footer-buttons" onclick="delete_url(${dto.noticeno})">삭제</button>
             <button class="btn btn-outline-dark footer-buttons" data-toggle="modal" data-target="#updateModal" >수정</button>	
+=======
+                <button class="btn btn-outline-dark footer-buttons" onclick="delete_url(${dto.noticeno})">삭제</button>
+                <button class="btn btn-outline-dark footer-buttons" data-toggle="modal" data-target="#updateModal" >수정</button>
+>>>>>>> shin
                 <c:if test="${sessionScope.grade == 'A'}">
                     <button class="btn btn-outline-dark footer-buttons" onclick="delete_url(${dto.noticeno})">삭제</button>
                     <button class="btn btn-outline-dark footer-buttons" data-bs-toggle="modal" data-bs-target="#updateModal" >수정</button>
@@ -100,12 +111,20 @@
                     <input type="hidden" name="noticeno" value="${dto.noticeno}">
                     <div class="modal-body-fir mb-3 d-flex justify-content-between">
                         <div class="input-group me-5">
+<<<<<<< HEAD
                             <span class="input-group-text" >제목</span>
+=======
+                            <span class="input-group-text">제목</span>
+>>>>>>> shin
                             <input type="text" class="form-control " value="${dto.title}" name="title">
                         </div>
                         <div class="input-group">
                             <span class="input-group-text">이름</span>
+<<<<<<< HEAD
                             <input type="text" class="form-control" placeholder="id" name="id" value="${dto.id}"  readonly>
+=======
+                            <input type="text" class="form-control" placeholder="id" name="id" value="${sessionScope.id}"  readonly>
+>>>>>>> shin
                         </div>
                     </div>
                     <div class="mb-3 mt-3 " style="">
@@ -114,7 +133,10 @@
                             <textarea class="form-control " rows="5" cols="3" id="content" name="content" style="height:500px">${dto.content}</textarea>
                         </div>
                     </div>
+<<<<<<< HEAD
                     
+=======
+>>>>>>> shin
                 </form>
             </div>
             <!-- Modal footer -->

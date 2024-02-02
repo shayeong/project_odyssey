@@ -17,7 +17,11 @@
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer">
 		<attributes>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<attribute name="optional" value="true"/>
+=======
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+>>>>>>> shin
 =======
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 >>>>>>> shin

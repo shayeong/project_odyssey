@@ -150,7 +150,11 @@
 	        		<a class="nav-link" href="${pageContext.request.contextPath }/review/review">여행리뷰 <span class="sr-only">(current)</span></a>
 	      		</li>
 	      		<li class="nav-item">
+<<<<<<< HEAD
                  <a class="nav-link" href="${root }/notice/list">게시판</a>
+=======
+                 <a class="nav-link" href="${root}/notice/list">게시판</a>
+>>>>>>> shin
                	</li>
                	<li class="nav-item">
                  <a class="nav-link" href="${root}/board/board">플래너</a>
