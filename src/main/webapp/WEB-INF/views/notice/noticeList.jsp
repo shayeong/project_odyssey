@@ -30,7 +30,7 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center" style="margin-top: 150px">
         <div>
-            <h2>공지사항</h2>
+            <h2>게시판</h2>
         </div>
         <form action="/notice/list" class="d-flex">
             <div class="row">
