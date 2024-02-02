@@ -44,7 +44,6 @@
 
 .container {
 	margin-top: 90px;
- 	margin-bottom: 150px;
 }
 
 .carousel-inner>.carousel-item>img {

@@ -1,18 +1,18 @@
 package com;
 import java.io.File;
  
-public class UploadCon {
+public class UploadMem {
  
     // Windows, VMWare, AWS cloud 절대 경로 설정
     public static synchronized String getUploadDir() {
         String path = "";
         if (File.separator.equals("\\")) {
-            path = "D:/2023-java_fullstack/deploy/contents/storage/";
-            System.out.println("Windows 11: " + path);
+            path = "D:/2023-java_fullstack/deploy/odyssey/member/storage/";
+            System.out.println("Windows 10: " + path);
             
         } else {
             // System.out.println("Linux");
-            path = "/home/ubuntu/deploy/contents/storage/";
+            path = "/home/ubuntu/deploy/member/storage/";
         }
         
         return path;

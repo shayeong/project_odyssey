@@ -36,7 +36,7 @@
     .main-content {
         flex: 1;
         padding: 15px;
-        margin-bottom: 50px;
+        margin-bottom: 150px;
     }
 
     .bottombar {

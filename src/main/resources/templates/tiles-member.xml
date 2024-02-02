@@ -5,15 +5,46 @@
 
 <tiles-definitions>
 
-	<definition name="/member/mypage" extends="main">
-		<put-attribute name="title" value="나의 페이지"></put-attribute>
+	<definition name="/member/agree" extends="main">
+		<put-attribute name="title" value="동의페이지"></put-attribute>
 		<put-attribute name="body"
-			value="/WEB-INF/views/member/mypage.jsp" />
-	</definition>
+		  value="/WEB-INF/views/member/agreement.jsp" />
+	  </definition>
+	
+	  <definition name="/member/create" extends="main">
+		<put-attribute name="title" value="회원가입"></put-attribute>
+		<put-attribute name="body"
+		  value="/WEB-INF/views/member/createForm.jsp" />
+	  </definition>
+	  <definition name="/member/login" extends="main">
+		<put-attribute name="title" value="로그인"></put-attribute>
+		<put-attribute name="body"
+		  value="/WEB-INF/views/member/loginForm.jsp" />
+	  </definition>
+	  <definition name="/member/list" extends="main">
+		<put-attribute name="title" value="회원목록"></put-attribute>
+		<put-attribute name="body"
+		  value="/WEB-INF/views/member/list.jsp" />
+	  </definition>
+	  <definition name="/member/read" extends="main">
+		<put-attribute name="title" value="회원조회"></put-attribute>
+		<put-attribute name="body"
+		  value="/WEB-INF/views/member/read.jsp" />
+	  </definition>
+	  <definition name="/member/update" extends="main">
+		<put-attribute name="title" value="회원수정"></put-attribute>
+		<put-attribute name="body"
+		  value="/WEB-INF/views/member/updateForm.jsp" />
+	  </definition>
+	  <definition name="/member/mypage" extends="main">
+		<put-attribute name="title" value="나의페이지"></put-attribute>
+		<put-attribute name="body"
+		  value="/WEB-INF/views/member/mypage.jsp" />
+	  </definition>
+	  <definition name="/member/updateFile" extends="main">
+		<put-attribute name="title" value="사진수정"></put-attribute>
+		<put-attribute name="body"
+		  value="/WEB-INF/views/member/updateFileForm.jsp" />
+	  </definition>
 
-	<definition name="/member/createForm" extends="main">
-		<put-attribute name="title" value="회원가입 페이지"></put-attribute>
-		<put-attribute name="body"
-			value="/WEB-INF/views/member/createForm.jsp" />
-	</definition>
 </tiles-definitions>       
