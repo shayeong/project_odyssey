@@ -31,7 +31,6 @@
 	
 	<!-- make_plan sub-header -->
 	<div class="plan-header">
-		<%@include file ="/plan/region.jsp" %>
 		<label class="title">여행 제목 : </label>
 		<input type="text" name="title_input" id="title_input">
 		<div class="calendar">
@@ -127,7 +126,6 @@
 		<!-- 지도 API -->
 		<div class="plan-mapbox">
             <div class="plan-map">
-            	<%@include file ="/plan/mapapi.jsp" %>
             </div>
         </div>
 		<!-- 지도 API -->
