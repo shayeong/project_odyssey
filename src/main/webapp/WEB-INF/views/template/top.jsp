@@ -1,356 +1,315 @@
-<%@ page contentType="text/html; charset=UTF-8" %> 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- 
-<c:set var="root" value="${pageContext.request.contextPath }"/>
- <c:choose>
-    <c:when test="${not empty sessionScope.id && sessionScope.grade == 'A'}">
-        <c:set var="str">관리자 페이지 입니다.</c:set>
-    </c:when>
-    <c:when test="${not empty sessionScope.id && sessionScope.grade != 'A'}">
-        <c:set var='str'>안녕하세요 ${sessionScope.mname}(${sessionScope.id }) 님!</c:set>
-    </c:when>
-    <c:otherwise>
-        <c:set var="str">기본 페이지 입니다.</c:set>
-    </c:otherwise>
-</c:choose> 
-<!DOCTYPE html>	
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!DOCTYPE html>
+<html>
 <head>
-  <title>shop</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-  <script src="https://kit.fontawesome.com/71c72323b0.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">@import url("${pageContext.request.contextPath }/login/login_style.css");</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<!-- 부트스트랩 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
 <style type="text/css">
-  #grade {
-    color: white;
-  }
-  body {
-    font-family: 'Arial', sans-serif;
-    margin: 0; /* Remove default margin */
-  }
-
-  .navbar {
-    padding: 15px; /* Add padding */
-  }
-
-  .vertical-nav {
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #343a40;
-    padding-top: 20px;
-    /* z-index: 1; Remove or set to 0 */
-  }
-
-  .vertical-nav a {
-    display: block;
-    padding: 15px;
-    color: #fff;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-
-  .vertical-nav a:hover {
-    background-color: #555;
-  }
-
-  .content {
-    margin-left: 200px;
-    padding: 16px;
-  }
+	@font-face {
+	    font-family: 'SUIT-Medium';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	@font-face {
+    font-family: 'SUIT-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}  
+	
+	
+	.navbar-brand{
+		margin-left: 4%;
+	}
+	
+	.navbar-expand-lg .navbar-collapse{
+		justify-content: end;
+		margin-right: 70px;
+	}
+	
+	.bg{
+		background-color: white !important;
+		box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+		-webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+	}
+	
+	.navbar-light .navbar-nav .nav-link{
+		font-family: 'SUIT-Medium';
+		font-size: 1.1rem;
+		color: #545454 !important;
+		letter-spacing: 2px;
+		border: none;
+    	background-color: white;
+	}
+	
+	.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-lin{
+		color: #545454;
+	}
+	
+	.nav-link{
+		margin-left: 15px;
+		letter-spacing: 2px;
+	}
+	
+	.logo-text{
+		font-size: 1.05rem;
+		color: #545454;
+		font-family: 'SUIT-Bold';
+		letter-spacing: 2px;
+	}
+	
+	.dropdown-item{
+		font-family: 'SUIT-Medium';
+		font-size: 1.1rem;
+		color: #545454 !important;
+		letter-spacing: 2px;
+	}
+	
+	.dropdown-menu a:hover{
+      text-decoration:none;
+      font-weight:bold;
+   }
+   
+   .modal{
+		background-color: rgba( 255, 255, 255, 0.5 );
+	}
+	
+	/* dropdown */
+	.dropdown-content{
+		display: none;
+   		position: absolute;
+	}
+	
+	.dropdown-content a {
+	    color: #545454;
+	    padding: 12px 16px;
+	    text-decoration: none;
+	    display: block;
+	    background-color: #f9f9f9;
+	    font-family: 'SUIT-Medium';
+	    min-width: 130px;
+	    text-align: center;
+	}
+	
+	.dropdown-content a:hover {
+		background-color: #f1f1f1;
+		text-decoration: none;
+		font-weight:bold;
+		color: #545454;
+	}
+	
+	.show {display:block;}
+	
 </style>
 
-
-  <script type="text/javascript">
-/*     function getCategory(){
-      return fetch("/contents/getCategory")
-                      .then(response => response.json());
-    }
-    window.onload=function(){
-      getCategory()
-        .then(data => {  
-          console.log(data);
-          for (let i = 0; i < data.length; i++) {
-            $('#pmenu').append("<li><a  class='dropdown-item' href='/contents/mainlist/"+data[i].cateno+"'>" + data[i].catename + "</a></li>");
-          }                  
-        }).catch(console.log);
-    };
-    function updateM(){
-      var url = "/member/update";
-      url += "?id=${dto.id}";
-      location.href = url;
-    } */  
-  </script>
 </head>
 <body>
-    <nav class="d-flex flex-column p-3 bg-white" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-            <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-5 fw-semibold">HOME</span>
-        </a>
-        <ul class="list-unstyled ps-0">
-            <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                    data-bs-target="#home-collapse" aria-expanded="false">
-                    STORE
-                </button>
-                <div class="collapse" id="home-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">OUTER</a></li>
-                        <li><a href="#" class="link-dark rounded">TOP</a></li>
-                        <li><a href="#" class="link-dark rounded">BOTTOM</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                    data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    COLLECTION
-                </button>
-            </li>
-            <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                    data-bs-target="#orders-collapse" aria-expanded="false">
-                   COMMUNITY
-                </button>
-                <div class="collapse" id="orders-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">NOTICE</a></li>
-                        <li><a href="#" class="link-dark rounded">Q & A</a></li>
-                    </ul>
-                </div>             
-            </li>
-            
-        </ul>
+	<c:set var="user" value="${sessionScope.user }"/>
+	
+	<c:if test="${not empty param.flag }">
+		<c:choose>
+			<c:when test="${not param.flag }">
+				<script>
+					alert("로그인 정보가 맞지 않습니다. 다시 입력해 주세요 :)");
+				</script>
+			</c:when>
+			<c:when test="${param.flag }">
+				<script>
+					alert("임시 비밀번호를 전송했습니다 :)");
+				</script>
+			</c:when>	
+		</c:choose>
+	</c:if>
+	<c:if test="${param.a == 1 }">
+		<script>
+			alert("회원 탈퇴가 완료되었습니다.");
+		</script>
+	</c:if>
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg">
+		<a class="navbar-brand" href="${pageContext.request.contextPath }/">
+	  		<img src="${pageContext.request.contextPath }/images/logo.png" width="110px" height="58px">
+	  		<span class="logo-text">국내여행 플래너</span>
+	  	</a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+	  	</button>
+	  	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+	    	<ul class="navbar-nav">
+	      		<li class="nav-item active">
+	        		<a class="nav-link" href="${pageContext.request.contextPath }/review/review">여행리뷰 <span class="sr-only">(current)</span></a>
+	      		</li>
+	      		<li class="nav-item">
+                 <a class="nav-link" href="${pageContext.request.contextPath }/howTo.pdf">이용방법</a>
+               	</li>
+               	<li class="nav-item">
+                 <a class="nav-link" href="${root}/board/board">여행플랜</a>
+               	</li>
+	      		<c:choose>
+	      			<c:when test="${user != null}">
+						<li class="nav-item">
+			        		<button onclick="myFunction()" class="nav-link dropdown-toggle" href="#">${user.name }님 </button>
+			        		<div id="myDropdown" class="dropdown-content">
+							    <a href="${root}/member/mypage">마이페이지</a>
+							    <a href="${pageContext.request.contextPath }/login/userlogout.lo">로그아웃</a>
+							 </div>
+			      		</li>
+			      		
+	      			</c:when>
+	      			<c:otherwise>
+			      		<li class="nav-item">
+					        <button type="button" class="nav-link" data-toggle="modal" data-target="#exampleModal">
+							  로그인 
+							</button>
+							
+							<!-- 로그인 모달창 -->
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog modal-dialog-centered">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="exampleModalLabel"></h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <!-- 로그인 -->
+							      <div class="modal-body">
+							        <div class="login_content">
+										<div class="signIn">
+											<div class="signIn_form">
+											
+												<!-- 로그인 윗부분 -->
+												<div class="signForm_top">
+													<div class="signIn_header">
+														<img src="${pageContext.request.contextPath }/images/logo.png">
+													</div>
+												</div>
+												
+												<!-- 로그인 입력 부분 -->
+												<div class="signForm_middle">
+													<form action="${pageContext.request.contextPath }/login/userloginOk.lo" method="post" id="loginForm">
+														<p class="titleText">이메일</p>
+														<div class="inputText">
+															<input id="signForm_email" placeholder="이메일을 입력해 주세요." type="email" name="email">
+															<p class="error-message_email"></p>
+														</div>
+														
+														<p class="titleText">비밀번호</p>
+														<div class="inputText">
+															<input id="signForm_pw" placeholder="비밀번호를 입력해 주세요." type="password" autocomplete="current-password" name="password">
+															<p class="error-message_pw"></p>
+														</div>
+														<input type="submit" autocomplete="off" style="display: none;">
+													</form>
+													
+													<div class="signForm_submit">
+														<button type="submit" id="signForm_login" class="login_button" form="loginForm">
+															<span class="login_submit_text"><b>로그인</b></span>
+														</button>
+													</div>
+												</div>
+												<!-- 비밀번호 찾기, 회원가입 -->
+												<p class="signForm_bottom">
+													<span class="find-pw">
+														<a href="${root}/login/findPw">비밀번호 찾기</a>
+													</span> 
+													<span class="bottom_side">&#124</span>
+													<span class="signUp-btn">
+														<a href="${root}/member/agree">회원가입</a>
+													</span>
+												</p>
+										
+											</div>
+										</div>
+									</div>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+							
+					      </li>
+			      		
+		      		</c:otherwise>
+	      		</c:choose>
+	    	</ul>
+	  	</div>
+	</nav>
 
-        <!-- JSTL 코드 추가 -->
-        <c:choose>
-            <c:when test="${empty sessionScope.id }">
-                <ul class="list-unstyled ps-0 mt-auto">
-                    <li class="mb-1">
-                		<a class="btn btn-primary w-100" id="grade" href="#"><i class="fa-solid fa-cat"></i> ${str}</a>
-            		</li>
-                    <li class="mb-1">
-                        <a href="${root}/member/agree" class="btn btn-primary w-100"><i
-                                class="fa-solid fa-user-plus"></i> Sign Up</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="${root}/member/login" class="btn btn-primary w-100"><i
-                                class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
-                    </li>
-                </ul>
-            </c:when>
-            <c:when test="${not empty sessionScope.id && sessionScope.grade == 'A'}">
-                <ul class="list-unstyled ps-0 mt-auto">
-					<li class="mb-1">
-                		<a class="btn btn-primary w-100" id="grade" href="#"><i class="fa-solid fa-cat"></i> ${str}</a>
-            		</li>
-                    <li class="mb-1">
-                        <a href="${root}/admin/contents/create" class="btn btn-primary w-100"><i
-                                class="fa-brands fa-shopify"></i> 상품등록</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="${root}/contents/list" class="btn btn-primary w-100"><i
-                                class="fa-brands fa-shopify"></i> 상품목록</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="${root}/admin/member/list" class="btn btn-primary w-100"><i
-                                class="fa-solid fa-user-group"></i> 회원목록</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="${root}/member/logout" class="btn btn-primary w-100"><i
-                                class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
-                    </li>
-                </ul>
-            </c:when>
-            <c:otherwise>
-                <ul class="list-unstyled ps-0 mt-auto">
-                	<li class="mb-1">
-                		<a class="btn btn-primary w-100" id="grade" href="#"><i class="fa-solid fa-cat"></i> ${str}</a>
-            		</li>
-                    <li class="mb-1">
-                        <a href="${root}/cart/list" class="btn btn-primary w-100"><i class="bi bi-cart4"></i> Cart</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="${root}/member/update/${sessionScope.id}/" class="btn btn-primary w-100"><i
-                                class="fa-solid fa-user-pen"></i> 정보 수정</a>
-                    </li>
-                    <li class="mb-1">
-                        <a href="${root}/member/logout" class="btn btn-primary w-100"><i
-                                class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
-                    </li>
-                </ul>
-            </c:otherwise>
-        </c:choose>
-    </nav>
+	
+	<script>
+		// 이메일 형식 검사
+		$(document).ready(function(){
+			
+	    let id = document.querySelector('#signForm_email');
+	    let error = document.querySelector('.error-message_email');
+	    
+	    id.addEventListener("focusout", checkId);
+	    
+	    function checkId(){
+	    	let idPattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/
 
-    <!-- Bootstrap JS and Popper.js scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
+	        if(!idPattern.test(id.value)){	//정규표현식을 통과하지 못한다면
+	        	error.innerHTML = "올바른 이메일 형식이 아닙니다. 다시 입력해 주세요.";
+	        	error.style.display = "block";
+	        } else{
+	        	error.innerHTML = "";
+	        }
+	    }
+		});
+		
+		// 비밀번호 체크
+		$(document).ready(function(){
+			
+	    let pw = document.querySelector('#signForm_pw');
+	    let error = document.querySelector('.error-message_pw');
+	    
+	    pw.addEventListener("focusout", checkPw);
+	    
+	    function checkPw(){
+	        if(pw.value == ""){	//정규표현식을 통과하지 못한다면
+	        	error.innerHTML = "비밀번호를 입력해 주세요.";
+	        	error.style.display = "block";
+	        } else{
+	        	error.innerHTML = "";
+	        }
+	    }
+		});
+		
+		// 로그인 후 드롭 네비바
+		function myFunction() {
+		    document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		window.onclick = function(event) {
+		  if (!event.target.matches('.dropdown-toggle')) {
+
+		    let dropdowns = document.getElementsByClassName("dropdown-content");
+		    let i;
+		    for (i = 0; i < dropdowns.length; i++) {
+		      let openDropdown = dropdowns[i];
+		      if (openDropdown.classList.contains('show')) {
+		        openDropdown.classList.remove('show');
+		      }
+		    }
+		  }
+		}
+		
+		
+	</script>
+	
+	<!-- 부트스트랩 -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
-
 </html>
-<!-- 
-
- -->
-
-
-<!--
-<nav class="navbar navbar-expand-sm">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="bi bi-shop"> </i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse">
-      <div class="vertical-nav">
-        <ul class="navbar-nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="/"><i class="fa-solid fa-shirt"></i></a>
-          </li> 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Product</a>
-            <ul class="dropdown-menu" id="pmenu">
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Community</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="${root}/member/mypage">Mypage</a></li>
-              <li><a class="dropdown-item" href="${root}/contents/detail">Review</a></li>
-              <li><a class="dropdown-item" href="${root}/notice/list">Notice</a></li>
-              <li><a class="dropdown-item" href="#">Q&A</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="grade" href="#"><i class="fa-solid fa-cat"></i> ${str}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="${root}/cart/list"><i class="bi bi-cart4"></i> Cart</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="${root}/member/update/${sessionScope.id}/"><i class="fa-solid fa-user-pen"></i> 정보 수정</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="${root}/member/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="${root}/member/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
-          </li>
-        </ul>
-      </div>
-      <ul class="navbar-nav ms-auto">
-      </ul>
-    </div>
-  </div>
-</nav>
- -->
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-<!-- 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark flex-column fixed-start">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="bi bi-shop"> </i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/"><i class="fa-solid fa-shirt"></i></a>
-        </li> 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Product</a>
-          <ul class="dropdown-menu" id="pmenu">
-  
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Community</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="${root}/member/mypage">Mypage</a></li>
-            <li><a class="dropdown-item" href="${root}/contents/detail">Review</a></li>
-            <li><a class="dropdown-item" href="${root}/notice/list">Notice</a></li>
-            <li><a class="dropdown-item" href="#">Q&A</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="grade" href="#"><i class="fa-solid fa-cat"></i> ${str}</a>
-        </li>
-      </ul>
-        <ul class="navbar-nav ms-auto">
-        <c:choose>
-            <c:when test="${empty sessionScope.id }">
-        <li class="nav-item">
-            <a href="${root}/member/agree" class="nav-link m-2"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
-        </li>
-        <li class="nav-item">
-            <a href="${root}/member/login" class="nav-link m-2 "><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
-        </li>
-        
-        </c:when>
-        <c:when test="${not empty sessionScope.id && sessionScope.grade == 'A'}">
-        <li class="nav-item">
-            <a href="${root}/admin/contents/create" class="nav-link m-2 "><i class="fa-brands fa-shopify"></i> 상품등록</a>
-        </li>
-        <li class="nav-item">
-    		<a href="${root}/contents/list" class="nav-link m-2 "><i class="fa-brands fa-shopify"></i> 상품목록</a>
-		</li>
-        <li class="nav-item">
-            <a href="${root}/admin/member/list" class="nav-link m-2 "><i class="fa-solid fa-user-group"></i> 회원목록</a>
-        </li>
-        <li class="nav-item">
-            <a href="${root}/member/logout" class="nav-link m-2 "><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
-        </li>
-        </c:when>
-        <c:otherwise>
-        <li class="nav-item">
-            <a href="${root}/cart/list" class="nav-link m-2 "><i class="bi bi-cart4"></i> Cart</a>
-        </li>
-        <li class="nav-item">
-           <a href="${root}/member/update/${sessionScope.id}/" class="nav-link m-2 "><i class="fa-solid fa-user-pen"></i> 정보 수정</a>
-        </li>
-        <li class="nav-item">
-            <a href="${root}/member/logout" class="nav-link m-2 "><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
-        </li>
-         </c:otherwise>
-       </c:choose> 
-     </ul>
-    </div>
-  </div>
-</nav>
- -->

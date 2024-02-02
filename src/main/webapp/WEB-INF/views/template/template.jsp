@@ -7,50 +7,66 @@
     <title><tiles:getAsString name="title"/></title>
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
-    <!-- Custom CSS styles for the sidebar -->
-    <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            margin: 0;
-            flex-direction: column;
-        }
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        margin: 0;
+        flex-direction: column; /* 세로로 쌓기 위해 column으로 변경 */
+    }
 
-        .container-fluid {
-            display: flex;
-            flex: 1;
-        }
+    .container-fluid {
+        display: flex;
+        flex: 1;
+        flex-direction: column; /* 세로로 쌓기 위해 column으로 변경 */
+        position: relative;
+    }
 
-        .sidebar {
-            width: 280px;
-            position: fixed;
-            height: 100%;
-            background-color: #f8f9fa; /* Set your desired sidebar background color */
-        }
+    .navbar,
+    .main-content,
+    .bottombar {
+        width: 100%;
+    }
 
-        .main-content {
-            flex: 1;
-            margin-left: 280px; /* Set the same width as the sidebar */
-            padding: 15px;
-        }
-    </style>
+    .navbar {
+        top: 0; /* 상단에 고정되도록 설정 */
+        position: fixed;
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 15px;
+        margin-bottom: 150px;
+    }
+
+    .bottombar {
+        position: absolute;
+        bottom: 0; /* 하단에 고정되도록 설정 */
+    }
+</style>
 </head>
 
 <body>
 
-<!-- Container for sidebar and main content -->
 <div class="container-fluid">
-    <!-- Sidebar -->
-    <div class="sidebar">
+
+    <!-- Nabar -->
+    <div class="navbar">
         <!-- 상단 메뉴 -->
         <tiles:insertAttribute name="header"/>
         <!-- 상단 메뉴 끝 -->
     </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
+    
+	 <!-- Main Content -->
+   	 <div class="main-content">
+     	<!-- 내용 시작 -->
+        <tiles:insertAttribute name="body"/>       													
+        <!-- 내용 끝 -->
+    </div>    
+    
+	<div class="bottombar">
         <!-- 내용 시작 -->
-        <tiles:insertAttribute name="body"/>
+        <tiles:insertAttribute name="bottom"/>       													
         <!-- 내용 끝 -->
     </div>
 </div>
