@@ -65,3 +65,18 @@ CREATE TABLE share_board
 	 FOREIGN KEY (plandetail_no) REFERENCES planner_detail(plandetail_no),
 	 FOREIGN KEY (id) REFERENCES member(id)
 );
+drop table if exists notice;
+CREATE TABLE notice(
+  noticeno      INT                        NOT NULL AUTO_INCREMENT COMMENT '글 번호',
+  title             VARCHAR(300)         NOT NULL COMMENT '제목',
+  content       TEXT                       NOT NULL COMMENT '내용',
+  id        VARCHAR (20)           NOT NULL COMMENT 'id',
+  passwd               varchar(20)  NOT NULL ,
+  cnt             SMALLINT                 NOT NULL DEFAULT '0' COMMENT '조회수',
+  rdate          DATETIME                  NOT NULL COMMENT '등록일',
+  PRIMARY KEY (noticeno)  
+);                            
+ 
+-- 등록
+INSERT INTO notice(title, content, id, passwd, cnt, rdate)
+VALUES('1', '1', '1',  "1", 0, NOW());
