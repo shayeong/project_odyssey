@@ -249,8 +249,9 @@
 	<script type="text/javascript">
     	
     $(".area").on("click",function() {
-    	if(window.location.pathname != "/login/userloginOk.lo"){
-			alert("로그인 후 사용가능합니다."),location.href="/";
+    	if('${sessionScope.id}' == ''){
+			alert("로그인 후 사용가능합니다.");
+			location.href="/";
 			return false;
     }
 	});
