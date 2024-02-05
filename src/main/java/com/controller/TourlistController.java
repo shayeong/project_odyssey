@@ -1,4 +1,4 @@
-package com.happy.app.tourlist;
+package com.controller;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.happy.app.action.AddTourlistAction;
+import com.controller.plan.AddTourlistAction;
 import com.controller.plan.ActionForward;
 
 @WebServlet("/tour/lib.to")
