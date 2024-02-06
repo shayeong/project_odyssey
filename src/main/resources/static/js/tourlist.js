@@ -18,7 +18,9 @@ function getJson() {
 						"<th>"+val.SIGUNGUCODE+"</th>"+
 						"<th>"+val.FIRSTIMAGE2+"</th>"+	
 						"<th>"+val.READCOUNT+"</th>"+	
-						"<th>"+val.TITLE+"</th>"+	
+						"<th>"+val.TITLE+"</th>"+
+						"<th>"+val.MAPX+"</th>"+
+						"<th>"+val.MAPY+"</th>"+
 					"</tr>"
 				);
 			} else {
@@ -33,10 +35,13 @@ function getJson() {
 							"<td>"+str.firstimage2+"</td>"+
 							"<td>"+str.readcount+"</td>"+
 							"<td>"+str.title+"</td>"+
+							"<td>"+str.mapx+"</td>"+
+							"<td>"+str.mapy+"</td>"+
 							// db에 값들을 ';'로 나눠서 넘겨줌
 							"<input type='hidden' name='list' value='"+
 							str.addr1+";"+str.areacode+";"+str.sigungucode+";"
-							+str.firstimage2+";"+str.readcount+";"+str.title+"'>"+
+							+str.firstimage2+";"+str.readcount+";"+str.title+";"
+							+str.mapx+";"+str.mapy+"'>"+
 						"</tr>"
 					);
 				}

@@ -8,8 +8,10 @@ public class TourlistDTO {
 	private int readcount;
 	private String title;
 	private int ping_num;
+	private double mapx;
+	private double mapy;
 	
-	public TourlistDTO(String addr1, int areacode, int sigungucode, String firstimage2, int readcount, String title) {
+	public TourlistDTO(String addr1, int areacode, int sigungucode, String firstimage2, int readcount, String title, double mapx, double mapy) {
 		super();
 		this.addr1 = addr1;
 		this.areacode = areacode;
@@ -17,6 +19,8 @@ public class TourlistDTO {
 		this.firstimage2 = firstimage2;
 		this.readcount = readcount;
 		this.title = title;
+		this.mapx = mapx;
+		this.mapy = mapy;
 	}
 	
 	public String getAddr1() {
@@ -61,7 +65,18 @@ public class TourlistDTO {
 	public void setPing_num(int ping_num) {
 		this.ping_num = ping_num;
 	}
-	
+	public double getMapx() {
+		return mapx;
+	}
+	public void setMapx(double mapx) {
+		this.mapx = mapx;
+	}
+	public double getMapy() {
+		return mapy;
+	}
+	public void setMapy(double mapy) {
+		this.mapy = mapy;
+	}
 	
 
 	

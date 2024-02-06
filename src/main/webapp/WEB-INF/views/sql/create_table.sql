@@ -35,7 +35,8 @@ CREATE TABLE tourlist
 	sigungucode          integer  NOT NULL ,
 	firstimage2          varchar(100)  NULL ,
 	readcount            integer  NOT NULL ,
-	ping                 integer  NULL ,
+	mapx                 double(15,12) NOT NULL ,
+	mapy                 double(15,12) NOT NULL ,
 	PRIMARY KEY  CLUSTERED (tour_no ASC)
 );
 
@@ -44,11 +45,11 @@ CREATE TABLE planner_detail
 	pld_no               integer AUTO_INCREMENT,
 	plan_name            varchar(20)  NULL ,
 	memo                 varchar(20)  NULL ,
-    value				 integer  NOT NULL ,
-    text                 varchar(30)  NULL ,
+    value_day			 integer  NOT NULL ,
+    text_title           varchar(30)  NULL ,
 	plan_no              integer  NOT NULL ,
 	tour_no              integer  NULL ,
-	PRIMARY KEY  CLUSTERED (plandetail_no ASC),
+	PRIMARY KEY  CLUSTERED (pld_no ASC),
 	 FOREIGN KEY (plan_no) REFERENCES planner(plan_no),
 	 FOREIGN KEY (tour_no) REFERENCES tourlist(tour_no)
 );

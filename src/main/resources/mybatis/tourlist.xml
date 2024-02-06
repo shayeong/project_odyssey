@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.model.tour.TourlistMapper">
 	<insert id="addTourlist" parameterType="com.model.tour.TourlistDTO">
-		INSERT INTO TOURLIST(title, addr1, areacode, sigungucode, firstimage2, readcount, ping)
-		VALUES(#{title}, #{addr1}, #{areacode}, #{sigungucode}, #{firstimage2}, #{readcount}, 0)
+		INSERT INTO TOURLIST(title, addr1, areacode, sigungucode, firstimage2, readcount, mapx, mapy)
+		VALUES(#{title}, #{addr1}, #{areacode}, #{sigungucode}, #{firstimage2}, #{readcount}, #{mapx}, #{mapy})
 	</insert>
 </mapper>

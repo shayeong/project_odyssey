@@ -44,8 +44,7 @@ public class TourlistController {
 				String[] tmp = Tourlist[i].split(";");
 				System.out.println(Arrays.toString(tmp));
 			
-				TourlistDTO tdto = new TourlistDTO(tmp[0], Integer.parseInt(tmp[1]), Integer.parseInt(tmp[2]), tmp[3], Integer.parseInt(tmp[4]), tmp[5]);
-				
+				TourlistDTO tdto = new TourlistDTO(tmp[0], Integer.parseInt(tmp[1]), Integer.parseInt(tmp[2]), tmp[3], Integer.parseInt(tmp[4]), tmp[5], Double.parseDouble(tmp[6]), Double.parseDouble(tmp[7]));
 				tdtos.add(tdto);
 			}
 

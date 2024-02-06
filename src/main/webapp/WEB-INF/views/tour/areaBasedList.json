@@ -11,7 +11,9 @@
     	"FIRSTIMAGE":"사진1",
     	"FIRSTIMAGE2":"사진2",
     	"READCOUNT":"조회수",
-        "TITLE":"관광지"
+        "TITLE":"관광지",
+        "MAPX":"X축",
+        "MAPY":"Y축"
     },
     "body":[
     		{
