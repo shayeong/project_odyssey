@@ -26,8 +26,3 @@ out/
 /.nb-gradle/
 ### VS Code ###
 .vscode/
-### 개인 설정 고려
-!**/src/**/com/UploadCon.java
-!**/src/**/resources/application.properties
-
-project_odyssey\src\main\resources\application.properties

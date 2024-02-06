@@ -29,14 +29,14 @@
     }
 
     .navbar {
-        position: fixed;
         top: 0; /* 상단에 고정되도록 설정 */
+        position: fixed;
     }
 
     .main-content {
         flex: 1;
         padding: 15px;
-        margin-bottom: 50px;
+        margin-bottom: 150px;
     }
 
     .bottombar {

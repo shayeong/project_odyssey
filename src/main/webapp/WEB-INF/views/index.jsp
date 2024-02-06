@@ -44,7 +44,6 @@
 
 .container {
 	margin-top: 90px;
- 	margin-bottom: 150px;
 }
 
 .carousel-inner>.carousel-item>img {
@@ -59,9 +58,17 @@
 #search{
 	width: 500px;
 }
-
-
 </style>
+
+<script type="text/javascript">
+	function make(region) {
+	  var url = "/PlanMakeAction.pl";
+	  url += "?region=" + region;
+   
+	  location.href = url;
+   
+	}
+</script>
 </head>
 <body>
 	
@@ -83,34 +90,7 @@
 		//기본 5초
 		})
 	</script>
-	<div class="all">
-	<div class="container">
-		<div id="demo" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-	
-
-
-			</div>
-		</div>
-	</div>
-	<!-- carousel 끝 -->
-	
-	
-
-	<!-- 이미지 시작 -->
-	<div class="mx-auto banner mt-5 mb-5 text-center">
-		<a href="https://tour.jeonju.go.kr/index.jeonju#content" class="text-decoration-none">   
-			<img src="${pageContext.request.contextPath }/images/side_banner1.PNG" width="150" height="150"  alt="전주여행" class="img-responsive center-block">
-		</a> 
-		<a href="https://www.visitjeju.net/kr/" class="text-decoration-none">         
-			<img src="${pageContext.request.contextPath }/images/side_banner2.PNG" width="150" height="150"  alt="제주도여행" class="img-responsive center-block">
-		</a> 
-		<a href="https://www.airbnb.co.kr/" class="text-decoration-none">         
-			<img src="${pageContext.request.contextPath }/images/side_banner3.PNG" width="150" height="150"  alt="에어비앤비" class="img-responsive center-block">
-		</a>
-	</div>
-
-	<!-- 이미지 끝 -->
+	<div id="demo" class="carousel slide" data-ride="carousel">
 
 	<!-- 검색바 시작 -->
 	<form action="https://www.google.com/search" method="GET">
@@ -137,9 +117,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=seoul" class="area">
+					<a href="javascript:make('seoul')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/seoul.jpg" width="100%" class="area-img" height="240px">
-						
 						<div class="area-text">
 							<h3>SEOUL</h3>
 							<span class="subtitle-text">서울</span>
@@ -148,7 +127,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=busan" class="area">
+					<a href="javascript:make('busan')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/busan.PNG" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -159,7 +138,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=jeju" class="area">
+					<a href="javascript:make('jeju')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/jeju.PNG" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -170,7 +149,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=gangneung" class="area">
+					<a href="javascript:make('gangneung')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/gangneung.PNG" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -181,7 +160,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=gyeongju" class="area">
+					<a href="javascript:make('gyeongju')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/gyeongju.PNG" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -192,7 +171,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=yeongwol" class="area">
+					<a href="javascript:make('yeongwol')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/Yeongwol.jpg" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -203,7 +182,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=jeonju" class="area">
+					<a href="javascript:make('jeonju')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/jeonju.PNG" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -214,7 +193,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=yeosu" class="area">
+					<a href="javascript:make('yeosu')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/Yeosu.PNG" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -225,7 +204,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=incheon" class="area">
+					<a href="javascript:make('incheon')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/Incheon.jpg" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -236,7 +215,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=sokcho" class="area">
+					<a href="javascript:make('sokcho')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/Sokcho.jpg" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -247,7 +226,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=daegu" class="area">
+					<a href="javascript:make('daegu')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/Daegu.jpg" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -258,7 +237,7 @@
 				</div>
 				
 				<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-					<a href="/PlanMakeAction.pl?region=chuncheon" class="area">
+					<a href="javascript:make('chuncheon')" class="area">
 						<img src="${pageContext.request.contextPath }/contents_img/Chuncheon.jpg" width="100%" class="area-img" height="240px">
 						
 						<div class="area-text">
@@ -277,8 +256,8 @@
 	<script type="text/javascript">
     	
     $(".area").on("click",function() {
-    	if(window.location.pathname != "/login/userloginOk.lo"){
-			alert("로그인 후 사용가능합니다."),location.href="/";
+    	if('${sessionScope.id}' == ''){
+			alert("로그인 후 사용가능합니다.");
 			return false;
     }
 	});

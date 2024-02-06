@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+ 
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.model.plan.PlanMakeMapper">
+
+	<select id="getPlanMakeList" parameterType="hashmap" resultType="com.model.plan.PlanMakeDTO">
+		SELECT title, addr1, areacode, sigungucode, image2, readcount, ping
+		FROM your_table_name
+		WHERE areacode = #{areacode}
+		  AND sigungucode = #{sigungucode}
+	  </select>
+	
+	  <select id="getPlanMakeListByAreaCode" parameterType="int" resultType="com.model.plan.PlanMakeDTO">
+		SELECT title, addr1, areacode, sigungucode, image2, readcount, ping
+		FROM your_table_name
+		WHERE areacode = #{areacode}
+	  </select>
+</mapper>
