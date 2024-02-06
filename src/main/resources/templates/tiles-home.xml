@@ -13,6 +13,11 @@
     <put-attribute name="bottom"
       value="/WEB-INF/views/template/bottom.jsp" />
   </definition>
+
+  <!-- main top, botom x -->
+  <definition name="main_2"
+   template="/WEB-INF/views/template/template_2.jsp">
+ </definition>
   
   <definition name="/home" extends="main">
     <put-attribute name="title" value="기본페이지"></put-attribute>

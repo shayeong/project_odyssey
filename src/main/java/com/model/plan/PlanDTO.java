@@ -1,6 +1,6 @@
 package com.model.plan;
 
-public class PlanMakeDTO {
+public class PlanDTO {
 	private String title;
 	private String addr1;
 	private int areacode;

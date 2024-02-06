@@ -1,4 +1,4 @@
-package com.happy.app.dao;
+package com.model.tour;
 
 import java.util.List;
 

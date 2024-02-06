@@ -5,7 +5,7 @@ $(function(){
 // json 함수 읽어오는 함수
 function getJson() {
 	// Seoul.json에서 데이터를 가져옴 -> function(data)로 처리 -> data에 저장
-	$.getJSON("areaBasedList.json", function(data) {
+	$.getJSON("../js/areaBasedList.json", function(data) {
 		$.each(data, function(key, val) {
 			if( key == "SID" ) {
 				$("table").attr("border", "1");

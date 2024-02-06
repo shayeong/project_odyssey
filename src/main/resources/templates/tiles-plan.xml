@@ -4,7 +4,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="/plan/create" extends="main">
+	<definition name="/plan/make" extends="main_2">
 		<put-attribute name="title" value="여행 계획 세우기"></put-attribute>
 		<put-attribute name="body"
 			value="/WEB-INF/views/plan/make_plan.jsp" />

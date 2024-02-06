@@ -1,3 +1,4 @@
+create schema IF NOT EXISTS odyssey;
 use odyssey;
 
 CREATE TABLE planner
@@ -28,14 +29,14 @@ CREATE TABLE member
 
 CREATE TABLE tourlist
 ( 
-	tour_titile          varchar(30)  NULL ,
-	addr                 varchar(30)  NOT NULL ,
-	areacode             varchar(10)  NOT NULL ,
-	sigungucode          varchar(10)  NOT NULL ,
-	tour_img             varchar(100)  NULL ,
+	tour_no				 integer AUTO_INCREMENT,
+	title                varchar(30)  NULL ,
+	addr1                varchar(100)  NOT NULL ,
+	areacode             integer  NOT NULL ,
+	sigungucode          integer  NOT NULL ,
+	firstimage2          varchar(100)  NULL ,
 	readcount            integer  NOT NULL ,
 	ping                 integer  NULL ,
-	tour_no              char(18)  NOT NULL ,
 	PRIMARY KEY  CLUSTERED (tour_no ASC)
 );
 
@@ -47,7 +48,7 @@ CREATE TABLE planner_detail
 	plan_no              varchar(20)  NOT NULL ,
 	plandetail_no        char(18)  NOT NULL ,
 	id                   varchar(10)  NULL ,
-	tour_no              char(18)  NULL ,
+	tour_no              integer  NULL ,
 	PRIMARY KEY  CLUSTERED (plandetail_no ASC),
 	 FOREIGN KEY (plan_no) REFERENCES planner(plan_no),
 	 FOREIGN KEY (id) REFERENCES member(id),
@@ -77,5 +78,3 @@ CREATE TABLE notice(
 );                            
  
 -- 등록
-INSERT INTO notice(title, content, id, passwd, cnt, rdate)
-VALUES('1', '1', '1',  "1", 0, NOW());
