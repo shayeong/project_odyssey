@@ -4,7 +4,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="/tour/test" extends="main">
+	<definition name="/tour/insert_db" extends="main">
 		<put-attribute name="title" value="db테스트"></put-attribute>
 		<put-attribute name="body"
 			value="/WEB-INF/views/tour/tourlist_test.jsp" />

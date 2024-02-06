@@ -17,22 +17,23 @@
          {
             "addr1": "부산광역시 부산진구 가야대로 779,1층(부전동)",
             "addr2": "",
-            "areacode": "6",
+            "areacode": 6,
             "booktour": "",
             "cat1": "A04",
             "cat2": "A0401",
             "cat3": "A04011000",
-            "contentid": "2930927",
-            "contenttypeid": "38",
-            "createdtime": "20221030154457",
+            "contentid": 2930927,
+            "contenttypeid": 38,
+            "createdtime": 20221030154457,
             "firstimage": "http://tong.visitkorea.or.kr/cms/resource/49/2885349_image2_1.jpg",
             "firstimage2": "http://tong.visitkorea.or.kr/cms/resource/49/2885349_image3_1.jpg",
             "cpyrhtDivCd": "Type3",
-            "mapx": "129.0568335973",
-            "mapy": "35.1579947826",
-            "mlevel": "6",
-            "modifiedtime": "20240201170050",
-            "sigungucode": "7",
+            "mapx": 129.0568335973,
+            "mapy": 35.1579947826,
+            "mlevel": 6,
+            "modifiedtime": 20240201170050,
+            "readcount":0,
+            "sigungucode": 7,
             "tel": "",
             "title": "가까운약국 서면",
             "zipcode": "47257"
@@ -78,7 +79,7 @@
                 },
                 {
                    "addr1":"부산광역시 강서구 천성동",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":6,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -138,7 +139,7 @@
                 },
                 {
                    "addr1":"부산광역시 부산진구 엄광로 118",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "addr2":"(가야동)",
                    "areacode":6,
                    "cat1":"A02",
@@ -159,7 +160,7 @@
                 {
                    "addr1":"부산광역시 남구 감만동 626-1",
                    "areacode":6,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0202",
                    "cat3":"A02020700",
@@ -264,7 +265,7 @@
                    "cat3":"A02030100",
                    "contentid":128610,
                    "contenttypeid":12,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "createdtime":20050926090000,
                    "mapy":129.2111944455,
                    "mapx":35.1844585662,
@@ -360,7 +361,7 @@
                 {
                    "addr1":"강원도 춘천시 남산면 강촌리",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0202",
                    "cat3":"A02020700",
@@ -379,7 +380,7 @@
                 {
                    "addr1":"강원도 춘천시 남산면 강촌로 88",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0202",
                    "cat3":"A02020600",
@@ -418,7 +419,7 @@
                 {
                    "addr1":"강원도 춘천시 남산면 강촌로 145-42",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A01",
                    "cat2":"A0101",
                    "cat3":"A01010500",
@@ -437,7 +438,7 @@
                 {
                    "addr1":"강원도 춘천시 북산면 부귀리 산59-8",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0205",
                    "cat3":"A02050200",
@@ -456,7 +457,7 @@
                 {
                    "addr1":"강원도 춘천시 근화동",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0202",
                    "cat3":"A02020600",
@@ -682,7 +683,7 @@
                 {
                    "addr1":"대구광역시 수성구 성동로37길 39-3",
                    "addr2":"(성동)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":4,
                    "cat1":"A02",
                    "cat2":"A0201",
@@ -722,7 +723,7 @@
                 },
                 {
                    "addr1":"대구광역시 북구 복현동",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":4,
                    "cat1":"A02",
                    "cat2":"A0202",
@@ -763,7 +764,7 @@
                 {
                    "addr1":"강원도 강릉시 사천면 중앙서로 62",
                    "addr2":"(사천면)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":32,
                    "cat1":"A02",
                    "cat2":"A0204",
@@ -784,7 +785,7 @@
                    "addr1":"강원도 강릉시 남부로 222",
                    "addr2":"(노암동)",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0202",
                    "cat3":"A02020600",
@@ -865,7 +866,7 @@
                 {
                    "addr1":"강원도 강릉시 강릉대로 33",
                    "addr2":"(홍제동)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":32,
                    "cat1":"A02",
                    "cat2":"A0204",
@@ -885,7 +886,7 @@
                 {
                    "addr1":"강원도 강릉시 성산면 보광리",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0201",
                    "cat3":"A02010200",
@@ -1065,7 +1066,7 @@
                 {
                    "addr1":"경상북도 경주시 강동면 양동마을안길 55",
                    "addr2":"(강동면)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":35,
                    "cat1":"A02",
                    "cat2":"A0201",
@@ -1126,7 +1127,7 @@
                 {
                    "addr1":"경상북도 경주시 내남면",
                    "addr2":"덕천리 산 8",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":35,
                    "cat1":"A02",
                    "cat2":"A0201",
@@ -1187,7 +1188,7 @@
                 {
                    "addr1":"경상북도 경주시 양북면 기림로 101-5",
                    "areacode":35,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0201",
                    "cat3":"A02010700",
@@ -1206,7 +1207,7 @@
                 {
                    "addr1":"경상북도 경주시 교촌길 39-2",
                    "areacode":35,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0201",
                    "cat3":"A02010600",
@@ -1408,7 +1409,7 @@
                {
                   "addr1":"인천광역시 강화군 화도면 해안남로1114번길 6",
                   "areacode":2,
-                  "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                  "firstimage2":"images/logo.png",
                   "cat1":"A01",
                   "cat2":"A0102",
                   "cat3":"A01020100",
@@ -1427,7 +1428,7 @@
                {
                   "addr1":"인천광역시 강화군 서도면 주문도길 256-1",
                   "areacode":2,
-                  "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                  "firstimage2":"images/logo.png",
                   "cat1":"A02",
                   "cat2":"A0201",
                   "cat3":"A02010900",
@@ -1486,7 +1487,7 @@
                {
                    "addr1":"제주특별자치도 제주시 한경면 청수서5길",
                    "addr2":"(한경면) 일원",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":39,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -1528,7 +1529,7 @@
                    "addr1":"제주특별자치도 서귀포시 표선면 가시리 산",
                    "addr2":"(표선면) 일대",
                    "areacode":39,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A01",
                    "cat2":"A0101",
                    "cat3":"A01010400",
@@ -1548,7 +1549,7 @@
                    "addr1":"제주특별자치도 제주시 연미길",
                    "addr2":"(오라삼동)",
                    "areacode":39,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A01",
                    "cat2":"A0101",
                    "cat3":"A01010400",
@@ -1568,7 +1569,7 @@
                 {
                    "addr1":"제주특별자치도 서귀포시 표선면 세화로",
                    "addr2":"(토산리) 일원",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":39,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -1588,7 +1589,7 @@
                 {
                    "addr1":"제주특별자치도 서귀포시 대정읍 하모이삼로21번길 1",
                    "areacode":39,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A01",
                    "cat2":"A0101",
                    "cat3":"A01010400",
@@ -1607,7 +1608,7 @@
                 {
                    "addr1":"제주특별자치도 서귀포시 대정읍 가파로",
                    "areacode":39,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A01",
                    "cat2":"A0101",
                    "cat3":"A01011300",
@@ -1626,7 +1627,7 @@
                 {
                    "addr1":"제주특별자치도 서귀포시 호근동 2112",
                    "addr2":"(호근동)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":39,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -1646,7 +1647,7 @@
                 {
                    "addr1":"제주특별자치도 서귀포시 성산읍 중산간동로",
                    "addr2":"(신풍리)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":39,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -1666,7 +1667,7 @@
                 {
                    "addr1":"제주특별자치도 서귀포시 안덕면 사계남로216번길 24-61",
                    "areacode":39,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0203",
                    "cat3":"A02030200",
@@ -1685,7 +1686,7 @@
                 {
                    "addr1":"제주특별자치도 서귀포시 안덕면 평화로",
                    "addr2":"(동광리)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":39,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -1705,7 +1706,7 @@
                 {
                    "addr1":"제주특별자치도 서귀포시 표선면 가시로592번길",
                    "addr2":"(가시리) 일원",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":39,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -1744,7 +1745,7 @@
                 {
                    "addr1":"전라북도 전주시 덕진구",
                    "addr2":"(덕진동1가)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":37,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -1785,7 +1786,7 @@
                 {
                    "addr1":"전라북도 전주시 완산구 남고산성1길 159-9",
                    "addr2":"(동서학동)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":37,
                    "cat1":"A02",
                    "cat2":"A0201",
@@ -2073,7 +2074,7 @@
                    "addr1":"서울특별시 강남구 영동대로 513",
                    "addr2":"(삼성동)",
                    "areacode":1,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0202",
                    "cat3":"A02020200",
@@ -2405,7 +2406,7 @@
                 {
                    "addr1":"강원도 속초시 영랑해안길 37",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A01",
                    "cat2":"A0101",
                    "cat3":"A01011200",
@@ -2424,7 +2425,7 @@
                 {
                    "addr1":"강원도 속초시 영랑호반길 140",
                    "addr2":"(금호동)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":32,
                    "cat1":"A01",
                    "cat2":"A0102",
@@ -2464,7 +2465,7 @@
                 {
                    "addr1":"강원도 영월군 영월읍 방절리 263-4",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0202",
                    "cat3":"A02020200",
@@ -2582,7 +2583,7 @@
                 {
                    "addr1":"강원도 영월군 남면 원골길 170-9",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0201",
                    "cat3":"A02010700",
@@ -2682,7 +2683,7 @@
                 {
                    "addr1":"강원도 영월군 영월읍 금강공원길 136",
                    "areacode":32,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0201",
                    "cat3":"A02010700",
@@ -2701,7 +2702,7 @@
                 {
                    "addr1":"전라남도 여수시 삼산면 거문길 103",
                    "areacode":38,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A01",
                    "cat2":"A0101",
                    "cat3":"A01011300",
@@ -2740,7 +2741,7 @@
                 {
                    "addr1":"전라남도 여수시 삼산면 거문리",
                    "areacode":38,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A01",
                    "cat2":"A0101",
                    "cat3":"A01011100",
@@ -2780,7 +2781,7 @@
                 {
                    "addr1":"전라남도 여수시 거북선공원2길 10",
                    "addr2":"(학동)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":38,
                    "cat1":"A02",
                    "cat2":"A0202",
@@ -2800,7 +2801,7 @@
                 {
                    "addr1":"전라남도 여수시 종화동",
                    "addr2":"(종화동)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":38,
                    "cat1":"A02",
                    "cat2":"A0205",
@@ -2900,7 +2901,7 @@
                 {
                    "addr1":"전라남도 여수시 화정면",
                    "addr2":"(낭도리)",
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "areacode":38,
                    "cat1":"A01",
                    "cat2":"A0101",
@@ -2920,7 +2921,7 @@
                 {
                    "addr1":"전라남도 여수시 화정면",
                    "areacode":38,
-                   "firstimage2":"https://happyhajo.pages.dev/img/logo.png",
+                   "firstimage2":"images/logo.png",
                    "cat1":"A02",
                    "cat2":"A0205",
                    "cat3":"A02050100",

@@ -99,16 +99,15 @@
 				<ul class="plan-searchbox_ul" >
 					<c:forEach var="planmakelist" items="${planmakelist }">
 						<li class="item" onmouseover="this.style.background='#F1F1F1'" onmouseout="this.style.background=''">
-							<img src="${planmakelist.image2 }" class="tourListImg" width="110px" height="86px">
+							<img src="${planmakelist.firstimage2 }" class="tourListImg" width="110px" height="86px">
 							<div class="info">
 								<h5 class="item-name">${planmakelist.title }</h5>
 								<span class="item-addr">${planmakelist.addr1 }</span>
 							</div>
-							
 							<%-- 일정추가하기 버튼 --%>
 							<div class="placeList-div">
-<%-- 								<button id="placeList-div_button" class="placeList-div_button${planmakelist.ping }">+</button> --%>
-								<button id="placeList-div_button${planmakelist.ping }" class="placeList-div_button">+</button>
+<%-- 								<button id="placeList-div_button" class="placeList-div_button${planmakelist.tour_no }">+</button> --%>
+								<button id="placeList-div_button${planmakelist.tour_no }" class="placeList-div_button">+</button>
 							</div>
 						</li>
 					</c:forEach>
@@ -272,7 +271,7 @@
 	            '<c:out value="${planmakelist.get(11).title }"/>'] 
    
    	for (var i = 0; i < 12; i++) {
-		num = Number('<c:out value="${planmakelist.get(0).ping }"/>') + i;
+		num = Number('<c:out value="${planmakelist.get(0).tour_no }"/>') + i;
       	btn = document.getElementById('placeList-div_button' + num);
       
 	    console.log(name[i]);    // title 12개 받아오기 성공
