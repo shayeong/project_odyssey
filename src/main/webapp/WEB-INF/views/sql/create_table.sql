@@ -3,9 +3,8 @@ use odyssey;
 
 CREATE TABLE planner
 ( 
-	plan_no              varchar(20)  NOT NULL ,
+	plan_no              integer AUTO_INCREMENT ,
 	region               varchar(20)  NOT NULL ,
-	plan_img             varchar(100)  NULL ,
 	sdate                datetime  NOT NULL ,
 	edate                datetime  NOT NULL ,
 	PRIMARY KEY  CLUSTERED (plan_no ASC)
@@ -42,16 +41,15 @@ CREATE TABLE tourlist
 
 CREATE TABLE planner_detail
 ( 
+	pld_no               integer AUTO_INCREMENT,
 	plan_name            varchar(20)  NULL ,
-	wdate                datetime  NOT NULL ,
-	memo                 varchar(1000)  NULL ,
-	plan_no              varchar(20)  NOT NULL ,
-	plandetail_no        char(18)  NOT NULL ,
-	id                   varchar(10)  NULL ,
+	memo                 varchar(20)  NULL ,
+    value				 integer  NOT NULL ,
+    text                 varchar(30)  NULL ,
+	plan_no              integer  NOT NULL ,
 	tour_no              integer  NULL ,
 	PRIMARY KEY  CLUSTERED (plandetail_no ASC),
 	 FOREIGN KEY (plan_no) REFERENCES planner(plan_no),
-	 FOREIGN KEY (id) REFERENCES member(id),
 	 FOREIGN KEY (tour_no) REFERENCES tourlist(tour_no)
 );
 
@@ -60,10 +58,8 @@ CREATE TABLE share_board
 	review               varchar(100)  NULL ,
 	rating               integer  NOT NULL ,
 	share_no             char(18)  NOT NULL ,
-	plandetail_no        char(18)  NOT NULL ,
 	id                   varchar(10)  NULL ,
 	PRIMARY KEY  CLUSTERED (share_no ASC),
-	 FOREIGN KEY (plandetail_no) REFERENCES planner_detail(plandetail_no),
 	 FOREIGN KEY (id) REFERENCES member(id)
 );
 drop table if exists notice;

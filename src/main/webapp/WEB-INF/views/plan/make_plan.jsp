@@ -362,35 +362,92 @@
 		
 	}
 	
-// 	function saveClick() {
-// 		var item, i;
+	// function saveClick() {
+	// 	var item, target, item;
 		
-// 		item = document.getElementsByClassName("list-bttn");
-
-// 		for( i = 1; i <= item.length; i++ ) {
-// 			document.getElementById('daybtn' + i).click();
-// 		}
-// 	}
+	// 	item = document.getElementsByClassName("list-bttn");
+	// 	target = document.getElementsByName("li4")[0].innerText.trim();
+	// 	selectedValues = {};
+		
+	// 	// 저장 버튼 누르면 마지막 day 클릭
+	// 	document.getElementById('daybtn' + item.length).click();
+		
+		
+		
+	// 	item = document.getElementsByClassName("hidden_input");
+	// 	item[0].setAttribute("name", "li4");
+	// 	item[0].setAttribute("value", target);
+		
+	// 	document.getElementById("savePlan").submit();
+	// }
 
 	function saveClick() {
-		var item, target, item;
-		
-		// 저장 버튼 누르면 마지막 day 클릭		
-		item = document.getElementsByClassName("list-bttn");
-		
-		document.getElementById('daybtn' + item.length).click();
-		
-		target = document.getElementsByName("li4")[0].innerText.trim();
-		
-		item = document.getElementsByClassName("hidden_input");
-		item[0].setAttribute("name", "li4");
-		item[0].setAttribute("value", target);
-		
-		document.getElementById("savePlan").submit();
-	}
+		// 마지막 day 클릭
+		var item = document.getElementsByClassName("list-bttn");
+    document.getElementById('daybtn' + item.length).click();
 
+	// 제목, sdate, edate 뽑기
+	var titleInputValue = document.getElementById("title_input").value;
+	var sdateValue = document.getElementById("sdate").value;
+	var edateValue = document.getElementById("edate").value;
+
+	console.log("title_input 값: " + titleInputValue);
+	console.log("sdate 값: " + sdateValue);
+	console.log("edate 값: " + edateValue);
+
+    // li 엘리먼트들의 값을 그룹화하여 객체로 묶음
+    var data = [];
+    var lis = document.querySelectorAll('ol#list li');
+    
+	lis.forEach(function(li) {
+    	var value = li.getAttribute('value');
+    	var textContent = li.firstChild.nodeValue.trim();
+    	var inputValue = li.querySelector('input.memo').value.trim();
+    	
+		if (value !== 0) {
+			data.push({
+				value_day: value,
+				text_title: textContent,
+				memo: inputValue
+			});
+		}
+	});
+
+	// planner
+	// 	id (member)	fk
+	// 	plan_no pk
+	// 	region
+	// 	sdate
+	// 	edate
+
+	// planer_detail
+	// 	pd_no
+	// 	plan_name
+	// 	plan_no fk
+	// 	value_day
+	// 	text_title
+	// 	memo
+
+	console.log('Data:', data);
+	console.log(data[0]);
+
+    /// 그룹화된 데이터를 서버로 전송
+	$.ajax({
+		type: 'POST',
+		url: '/PlanSave.pl',
+		contentType: 'application/json',
+		data: JSON.stringify(data), // 변경된 부분
+		success: function(response) {
+			console.log(response);
+			// 성공적으로 처리한 경우
+		},
+		error: function(error) {
+			console.error(error);
+			// 에러 발생 시 처리
+		}
+	});
 	
-	
+	}	
 </script>
 	
 </body>
