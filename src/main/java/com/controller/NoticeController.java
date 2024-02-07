@@ -35,7 +35,7 @@ public class NoticeController {
         if (request.getParameter("nowPage") != null) {
             nowPage = Integer.parseInt(request.getParameter("nowPage"));
         }
-        int recordPerPage = 15;// 한페이지당 보여줄 레코드갯수
+        int recordPerPage = 10;// 한페이지당 보여줄 레코드갯수
 
         int sno = (nowPage - 1) * recordPerPage;
         int eno = recordPerPage;

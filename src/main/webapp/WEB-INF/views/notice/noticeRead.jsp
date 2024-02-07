@@ -56,11 +56,9 @@
             </div>
         </div>
         <div class="card-footer d-flex flex-row-reverse ">
-                <button class="btn btn-outline-dark footer-buttons" onclick="delete_url(${dto.noticeno})">삭제</button>
-                <button class="btn btn-outline-dark footer-buttons" data-toggle="modal" data-target="#updateModal" >수정</button>
-                <c:if test="${sessionScope.grade == 'A'}">
+                <c:if test="${sessionScope.grade == 'H' && sessionScope.mname == dto.id}">
                     <button class="btn btn-outline-dark footer-buttons" onclick="delete_url(${dto.noticeno})">삭제</button>
-                    <button class="btn btn-outline-dark footer-buttons" data-bs-toggle="modal" data-bs-target="#updateModal" >수정</button>
+                    <button class="btn btn-outline-dark footer-buttons" data-toggle="modal" data-target="#updateModal" >수정</button>
                 </c:if>
             <button class="btn btn-outline-dark footer-buttons" onclick="list()">목록</button>
         </div>
@@ -104,7 +102,7 @@
                         </div>
                         <div class="input-group">
                             <span class="input-group-text">이름</span>
-                            <input type="text" class="form-control" placeholder="id" name="id" value="${sessionScope.id}"  readonly>
+                            <input type="text" class="form-control" placeholder="id" name="id" value="${sessionScope.mname}"  readonly>
                         </div>
                     </div>
                     <div class="mb-3 mt-3 " style="">

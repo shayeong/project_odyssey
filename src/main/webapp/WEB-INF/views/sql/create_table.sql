@@ -1,10 +1,10 @@
-create schema IF NOT EXISTS odyssey;
 use odyssey;
 
 CREATE TABLE planner
 ( 
-	plan_no              integer AUTO_INCREMENT ,
+	plan_no              varchar(20)  NOT NULL ,
 	region               varchar(20)  NOT NULL ,
+	plan_img             varchar(100)  NULL ,
 	sdate                datetime  NOT NULL ,
 	edate                datetime  NOT NULL ,
 	PRIMARY KEY  CLUSTERED (plan_no ASC)
@@ -28,29 +28,29 @@ CREATE TABLE member
 
 CREATE TABLE tourlist
 ( 
-	tour_no				 integer AUTO_INCREMENT,
-	title                varchar(30)  NULL ,
-	addr1                varchar(100)  NOT NULL ,
-	areacode             integer  NOT NULL ,
-	sigungucode          integer  NOT NULL ,
-	firstimage2          varchar(100)  NULL ,
+	tour_titile          varchar(30)  NULL ,
+	addr                 varchar(30)  NOT NULL ,
+	areacode             varchar(10)  NOT NULL ,
+	sigungucode          varchar(10)  NOT NULL ,
+	tour_img             varchar(100)  NULL ,
 	readcount            integer  NOT NULL ,
-	mapx                 double(15,12) NOT NULL ,
-	mapy                 double(15,12) NOT NULL ,
+	ping                 integer  NULL ,
+	tour_no              char(18)  NOT NULL ,
 	PRIMARY KEY  CLUSTERED (tour_no ASC)
 );
 
 CREATE TABLE planner_detail
 ( 
-	pld_no               integer AUTO_INCREMENT,
 	plan_name            varchar(20)  NULL ,
-	memo                 varchar(20)  NULL ,
-    value_day			 integer  NOT NULL ,
-    text_title           varchar(30)  NULL ,
-	plan_no              integer  NOT NULL ,
-	tour_no              integer  NULL ,
-	PRIMARY KEY  CLUSTERED (pld_no ASC),
+	wdate                datetime  NOT NULL ,
+	memo                 varchar(1000)  NULL ,
+	plan_no              varchar(20)  NOT NULL ,
+	plandetail_no        char(18)  NOT NULL ,
+	id                   varchar(10)  NULL ,
+	tour_no              char(18)  NULL ,
+	PRIMARY KEY  CLUSTERED (plandetail_no ASC),
 	 FOREIGN KEY (plan_no) REFERENCES planner(plan_no),
+	 FOREIGN KEY (id) REFERENCES member(id),
 	 FOREIGN KEY (tour_no) REFERENCES tourlist(tour_no)
 );
 
@@ -59,8 +59,10 @@ CREATE TABLE share_board
 	review               varchar(100)  NULL ,
 	rating               integer  NOT NULL ,
 	share_no             char(18)  NOT NULL ,
+	plandetail_no        char(18)  NOT NULL ,
 	id                   varchar(10)  NULL ,
 	PRIMARY KEY  CLUSTERED (share_no ASC),
+	 FOREIGN KEY (plandetail_no) REFERENCES planner_detail(plandetail_no),
 	 FOREIGN KEY (id) REFERENCES member(id)
 );
 drop table if exists notice;
@@ -72,6 +74,20 @@ CREATE TABLE notice(
   cnt             SMALLINT                 NOT NULL DEFAULT '0' COMMENT '조회수',
   rdate          DATETIME                  NOT NULL COMMENT '등록일',
   PRIMARY KEY (noticeno)  
-);                            
- 
+);
+
+drop table if exists review;
+CREATE TABLE `review` (
+  `reviewno` int NOT NULL AUTO_INCREMENT COMMENT '리뷰 번호',
+  `title` varchar(300) NOT NULL COMMENT '제목',
+  `content` text NOT NULL COMMENT '내용',
+  `id` varchar(20) NOT NULL COMMENT 'id',
+  `cnt` smallint NOT NULL DEFAULT '0' COMMENT '조회수',
+  `rdate` datetime NOT NULL COMMENT '등록일',
+  PRIMARY KEY (`reviewno`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+                             
 -- 등록
+INSERT INTO notice(title, content, id, cnt, rdate)
+VALUES('1', '1', '1',   0, NOW());

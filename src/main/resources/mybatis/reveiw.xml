@@ -1,0 +1,86 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.model.review.ReviewMapper">
+
+    <select id="total" parameterType="Map" resultType="int">
+        select count(*) from review
+        <where>
+            <choose>
+                <when test="col=='id'">
+                    id like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='title'">
+                    title like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='content'">
+                    content like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='title_content'">
+                    title like concat('%' , #{word} , '%')
+                    or
+                    content like
+                    concat('%' , #{word} , '%')
+                </when>
+            </choose>
+        </where>
+    </select>
+
+    <select id="list" parameterType="Map"
+            resultType="com.model.review.ReviewDTO">
+        SELECT reviewno, title, content, id, cnt, rdate
+        FROM review
+
+        <where>
+            <choose>
+                <when test="col=='id'">
+                    id like concat('%' , #{word} , '%')
+                </when>
+                <when test="col=='title'">
+                    title like concat('%' , #{word} , '%')
+                </when>
+                <when test="col=='content'">
+                    content like concat('%' , #{word} , '%')
+                </when>
+                <when test="col=='title_content'">
+                    title like concat('%' , #{word} , '%')
+                    or
+                    content like concat('%' , #{word} , '%')
+                </when>
+            </choose>
+        </where>
+        ORDER BY reviewno DESC
+        limit #{sno}, #{eno}
+    </select>
+
+    <select id="read" parameterType="int" resultType="com.model.review.ReviewDTO">
+        SELECT reviewno, title, content, id, cnt, rdate
+        FROM review
+        WHERE reviewno= #{reviewno};
+    </select>
+
+    <update id="upViewcnt" parameterType="int" >
+        UPDATE review
+        SET cnt = cnt + 1
+        WHERE reviewno = #{reviewno}
+    </update>
+
+    <insert id="create" parameterType="com.model.review.ReviewDTO" >
+        INSERT INTO review(title, content, id, rdate)
+        VALUES(#{title}, #{content}, #{id},sysdate())
+    </insert>
+
+    <update id="update" parameterType="com.model.review.ReviewDTO">
+        UPDATE review
+        SET title = #{title},
+            content = #{content},
+            id = #{id},
+            rdate = sysdate()
+        WHERE reviewno= #{reviewno}
+    </update>
+    <delete id="delete">
+        DELETE FROM review
+        WHERE reviewno=#{reviewno}
+    </delete>
+</mapper>

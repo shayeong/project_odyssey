@@ -40,7 +40,7 @@
                                 <c:if test="${col == 'id'}">
                                     selected
                                 </c:if>
-                                value="id">id</option>
+                                value="id">작성자</option>
                         <option
                                 <c:if test="${col == 'title'}">
                                     selected
@@ -69,8 +69,7 @@
                 </div>
                 <div class='col'>
                     <button type="submit" class="btn btn-dark">검색</button>
-					<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">등록</button>
-                    <c:if test="${sessionScope.grade == 'A'}">
+                    <c:if test="${sessionScope.grade == 'H'}">
                         <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">등록</button>
                     </c:if>
 
@@ -159,11 +158,11 @@
                     <div class="modal-body-fir mb-3 d-flex justify-content-between">
                         <div class="input-group me-5">
                             <span class="input-group-text">제목</span>
-                            <input type="text" class="form-control " placeholder="title" name="title">
+                            <input type="text" class="form-control " name="title">
                         </div>
                         <div class="input-group">
                             <span class="input-group-text">이름</span>
-                            <input type="text" class="form-control" placeholder="id" name="id" value="${sessionScope.id}"  readonly>
+                            <input type="text" class="form-control" name="id" value="${sessionScope.mname}"  readonly>
                         </div>
                     </div>
 
