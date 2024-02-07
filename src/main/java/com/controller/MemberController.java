@@ -201,8 +201,10 @@ public class MemberController {
 	public String login(@RequestParam Map<String, String> map, HttpSession session, HttpServletRequest request,
 			HttpServletResponse response) {
 
-		System.out.println("contentsno:"+map.get("contentsno"));
 		int cnt = service.loginCheck(map);
+		
+		// System.out.println("id:"+map.get("id"));
+		// System.out.println("passwd:"+map.get("passwd"));
 
 		if (cnt > 0) {
 			Map<String, String> gmap = service.getGrade(map.get("id"));
@@ -234,15 +236,8 @@ public class MemberController {
 		}
 		
 		if(cnt>0) {
-			
-			if(map.get("contentsno")!=null  && !map.get("contentsno").equals("") ) {
-				return "redirect:/contents/detail/"+map.get("contentsno");
-			}else if(map.get("cateno")!=null && !map.get("cateno").equals("")) {
-				return "redirect:/contents/mainlist/"+map.get("cateno");
-			}else {
-			
-				return "redirect:/";
-			}
+		
+			return "redirect:/";
 			
 		}else {
 			

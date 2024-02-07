@@ -147,21 +147,21 @@
 	  	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 	    	<ul class="navbar-nav">
 	      		<li class="nav-item active">
-	        		<a class="nav-link" href="${pageContext.request.contextPath }/review/review">여행리뷰 <span class="sr-only">(current)</span></a>
+	        		<a class="nav-link" href="${pageContext.request.contextPath }/review/list">여행리뷰 <span class="sr-only">(current)</span></a>
 	      		</li>
 	      		<li class="nav-item">
-                 <a class="nav-link" href="${pageContext.request.contextPath }/howTo.pdf">이용방법</a>
+                 <a class="nav-link" href="${root}/notice/list">게시판</a>
                	</li>
                	<li class="nav-item">
                  <a class="nav-link" href="${root}/board/board">여행플랜</a>
                	</li>
 	      		<c:choose>
-	      			<c:when test="${user != null}">
+	      			<c:when test="${not empty sessionScope.id && sessionScope.grade == 'H'}">
 						<li class="nav-item">
-			        		<button onclick="myFunction()" class="nav-link dropdown-toggle" href="#">${user.name }님 </button>
+			        		<button onclick="myFunction()" class="nav-link dropdown-toggle" href="#">${sessionScope.mname}님 </button>
 			        		<div id="myDropdown" class="dropdown-content">
 							    <a href="${root}/member/mypage">마이페이지</a>
-							    <a href="${pageContext.request.contextPath }/login/userlogout.lo">로그아웃</a>
+							    <a href="${root}/member/logout">로그아웃</a>
 							 </div>
 			      		</li>
 			      		
@@ -198,16 +198,22 @@
 												
 												<!-- 로그인 입력 부분 -->
 												<div class="signForm_middle">
-													<form action="${pageContext.request.contextPath }/login/userloginOk.lo" method="post" id="loginForm">
-														<p class="titleText">이메일</p>
+													<form action="/member/login" method="post" id="loginForm">
+														<p class="titleText">아이디</p>
+														<div class="inputText">
+															<input id="id" placeholder="아이디를 입력해 주세요." name="id">
+															<p class="error-message_id"></p>
+														</div>
+														
+														<!-- <p class="titleText">이메일</p>
 														<div class="inputText">
 															<input id="signForm_email" placeholder="이메일을 입력해 주세요." type="email" name="email">
 															<p class="error-message_email"></p>
-														</div>
+														</div> -->
 														
 														<p class="titleText">비밀번호</p>
 														<div class="inputText">
-															<input id="signForm_pw" placeholder="비밀번호를 입력해 주세요." type="password" autocomplete="current-password" name="password">
+															<input id="pwd" placeholder="비밀번호를 입력해 주세요." type="password" autocomplete="current-password" name="passwd">
 															<p class="error-message_pw"></p>
 														</div>
 														<input type="submit" autocomplete="off" style="display: none;">
@@ -226,7 +232,8 @@
 													</span> 
 													<span class="bottom_side">&#124</span>
 													<span class="signUp-btn">
-														<a href="${root}/member/agree">회원가입</a>
+														<!-- <a href="${root}/member/agree">회원가입</a> -->
+														<a href="${root}/member/createForm">회원가입</a>
 													</span>
 												</p>
 										
@@ -249,29 +256,48 @@
 	
 	<script>
 		// 이메일 형식 검사
+		// $(document).ready(function(){
+			
+	    // let id = document.querySelector('#signForm_email');
+	    // let error = document.querySelector('.error-message_email');
+	    
+	    // id.addEventListener("focusout", checkId);
+	    
+	    // function checkId(){
+	    // 	let idPattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/
+
+	    //     if(!idPattern.test(id.value)){	//정규표현식을 통과하지 못한다면
+	    //     	error.innerHTML = "올바른 이메일 형식이 아닙니다. 다시 입력해 주세요.";
+	    //     	error.style.display = "block";
+	    //     } else{
+	    //     	error.innerHTML = "";
+	    //     }
+	    // }
+		// });
+
+		// 아이디 체크
 		$(document).ready(function(){
 			
-	    let id = document.querySelector('#signForm_email');
-	    let error = document.querySelector('.error-message_email');
-	    
-	    id.addEventListener("focusout", checkId);
-	    
-	    function checkId(){
-	    	let idPattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/
+			let id = document.querySelector('#id');
+			let error = document.querySelector('.error-message_id');
+			
+			id.addEventListener("focusout", checkId);
+			
+			function checkId(){	
+				if(id.value == ""){	//정규표현식을 통과하지 못한다면
+					error.innerHTML = "아이디를 입력해 주세요.";
+					error.style.display = "block";
+				} else{
+					error.innerHTML = "";
+				}
+			}
+			});
 
-	        if(!idPattern.test(id.value)){	//정규표현식을 통과하지 못한다면
-	        	error.innerHTML = "올바른 이메일 형식이 아닙니다. 다시 입력해 주세요.";
-	        	error.style.display = "block";
-	        } else{
-	        	error.innerHTML = "";
-	        }
-	    }
-		});
 		
 		// 비밀번호 체크
 		$(document).ready(function(){
 			
-	    let pw = document.querySelector('#signForm_pw');
+	    let pw = document.querySelector('#pwd');
 	    let error = document.querySelector('.error-message_pw');
 	    
 	    pw.addEventListener("focusout", checkPw);

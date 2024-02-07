@@ -386,36 +386,7 @@ h3 {
 <!-- 				</a> -->
 <!-- 			</div> -->
 
-			<div class="col-12 col-md-6 col-lg-4 col-xl-3 item">
-				<a href="#" class="button1"> <img src="${pageContext.request.contextPath }/images/main_img01.png"
-					class="img_r">
-
-					<div class="button_text">
-						<span class="name"><h3>test1</h3></span>
-					</div>
-				</a>
-			</div>
-
-			<div class="col-12 col-md-6 col-lg-4 col-xl-3 item">
-				<a href="#" class="button1"> <img src="${pageContext.request.contextPath }/images/main_img02.png"
-					class="img_r">
-
-					<div class="button_text">
-						<span class="name"><h3>test2</h3></span>
-					</div>
-				</a>
-			</div>
-
-			<div class="col-12 col-md-6 col-lg-4 col-xl-3 item">
-				<a href="#" class="button1"> <img src="${pageContext.request.contextPath }/images/main_img03.png"
-					class="img_r">
-
-					<div class="button_text">
-						<span class="name"><h3>test3</h3></span>
-					</div>
-				</a>
-			</div>
-
+			
 		</div>
 	</div>
 

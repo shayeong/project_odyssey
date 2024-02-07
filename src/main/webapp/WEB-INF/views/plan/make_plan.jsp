@@ -12,6 +12,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="/plan/make_plan.style.css"/>
+<link rel="stylesheet" href="/css/make_plan.style.css"/>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%
@@ -21,7 +22,7 @@
 %>
 </head>
 <body>
-	<script type="text/javascript" src="/plan/planmake.js"></script>
+	<script type="text/javascript" src="/js/planmake.js"></script>
 	
 	<c:set var="planmakelist" value="${requestScope.planmakelist }" />
 
@@ -31,7 +32,6 @@
 	
 	<!-- make_plan sub-header -->
 	<div class="plan-header">
-		<%@include file ="/plan/region.jsp" %>
 		<label class="title">여행 제목 : </label>
 		<input type="text" name="title_input" id="title_input">
 		<div class="calendar">
@@ -41,6 +41,7 @@
    			<label class="calendar_detail_02">여행 종료일 : </label>
    			<input class="input-date" type="date" id="edate" value="" min="<%= sf.format(nowTime) %>"/>
 		</div>
+		<label class="title"><%= region %></label>
         <button class="plan-header_button-sumbit" onclick="saveClick()">저장</button>
         <button class="plan-header_button-close"  onClick = " if (confirm ('종료하겠습니까?')) history.back(); else  alert('입력 취소') ">닫기</button>
     </div>
@@ -127,7 +128,6 @@
 		<!-- 지도 API -->
 		<div class="plan-mapbox">
             <div class="plan-map">
-            	<%@include file ="/plan/mapapi.jsp" %>
             </div>
         </div>
 		<!-- 지도 API -->
