@@ -26,3 +26,6 @@ out/
 /.nb-gradle/
 ### VS Code ###
 .vscode/
+.gradle/
+
+.settings/org.eclipse.wst.common.component
